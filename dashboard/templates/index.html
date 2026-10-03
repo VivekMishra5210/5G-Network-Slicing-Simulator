@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5G Network Slicing Simulator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-grad-1: #0a0a1a;
+            --bg-grad-2: #1a1a3e;
+            --embb-color: #2196F3;
+            --urllc-color: #F44336;
+            --mmtc-color: #4CAF50;
+            --accent-glow: #00d4ff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #eee;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2));
+            min-height: 100vh;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px var(--accent-glow);
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            color: #aaa;
+        }
+
+        .control-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label {
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        input, select {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent-glow);
+        }
+
+        .run-btn {
+            background: rgba(0, 212, 255, 0.2);
+            border: 1px solid var(--accent-glow);
+            color: var(--accent-glow);
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+        }
+
+        .run-btn:hover {
+            background: var(--accent-glow);
+            color: #000;
+            box-shadow: 0 0 25px var(--accent-glow);
+        }
+
+        .run-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .status-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .status-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-card.embb { border-top: 4px solid var(--embb-color); }
+        .status-card.urllc { border-top: 4px solid var(--urllc-color); }
+        .status-card.mmtc { border-top: 4px solid var(--mmtc-color); }
+
+        .card-header {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .embb .card-header { color: var(--embb-color); }
+        .urllc .card-header { color: var(--urllc-color); }
+        .mmtc .card-header { color: var(--mmtc-color); }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1em;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
+
+        .charts-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-glow);
+            color: #000;
+        }
+
+        .chart-container {
+            flex-grow: 1;
+            position: relative;
+            min-height: 400px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .spinner {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255,255,255,0.1);
+            border-top-color: var(--accent-glow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        th { color: var(--accent-glow); }
+
+        #comparison-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="glass-panel">
+        <h1>5G Network Slicing Simulator</h1>
+        <h2>Adaptive QoS-Aware Resource Allocation</h2>
+    </header>
+
+    <div class="control-panel glass-panel">
+        <div class="control-group">
+            <label>Total Bandwidth (Mbps)</label>
+            <input type="range" id="bandwidth" min="50" max="500" value="100" oninput="this.nextElementSibling.value = this.value">
+            <output>100</output>
+        </div>
+        <div class="control-group">
+            <label>Duration (s)</label>
+            <input type="range" id="duration" min="10" max="120" value="60" oninput="this.nextElementSibling.value = this.value">
+            <output>60</output>
+        </div>
+        
+        <div class="control-group"><label>eMBB Users</label><input type="number" id="embb-users" value="20"></div>
+        <div class="control-group"><label>URLLC Users</label><input type="number" id="urllc-users" value="10"></div>
+        <div class="control-group"><label>mMTC Users</label><input type="number" id="mmtc-users" value="200"></div>
+        
+        <div class="control-group">
+            <label>Scenario</label>
+            <select id="scenario">
+                <option value="Normal">Normal</option>
+                <option value="Heavy eMBB">Heavy eMBB</option>
+                <option value="URLLC Emergency">URLLC Emergency</option>
+                <option value="Full Congestion">Full Congestion</option>
+                <option value="Dynamic">Dynamic</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label>Algorithm</label>
+            <select id="algorithm">
+                <option value="All">All (Compare)</option>
+                <option value="Static">Static</option>
+                <option value="Round Robin">Round Robin</option>
+                <option value="QoS Adaptive">QoS Adaptive</option>
+            </select>
+        </div>
+        <div class="control-group"><label>Random Seed</label><input type="number" id="seed" value="42"></div>
+
+        <button class="run-btn" id="run-btn" onclick="runSimulation()">Run Simulation</button>
+        <div class="spinner" id="spinner"></div>
+    </div>
+
+    <div class="main-content">
+        <div class="status-cards" id="status-cards">
+            <!-- Populated by JS -->
+            <div class="status-card glass-panel embb">
+                <div class="card-header">eMBB</div>
+                <div class="metric"><span>Throughput:</span> <span id="embb-thr">--</span></div>
+                <div class="metric"><span>Latency:</span> <span id="embb-lat">--</span></div>
+                <div class="metric"><span>Packet Loss:</span> <span id="embb-loss">--</span></div>
+                <div class="metric"><span>QoS Satisfied:</span> <span id="embb-qos">--</span></div>
+            </div>
+            <div class="status-card glass-panel urllc">
+                <div class="card-header">URLLC</div>
+                <div class="metric"><span>Throughput:</span> <span id="urllc-thr">--</span></div>
+                <div class="metric"><span>Latency:</span> <span id="urllc-lat">--</span></div>
+                <div class="metric"><span>Packet Loss:</span> <span id="urllc-loss">--</span></div>
+                <div class="metric"><span>QoS Satisfied:</span> <span id="urllc-qos">--</span></div>
+            </div>
+            <div class="status-card glass-panel mmtc">
+                <div class="card-header">mMTC</div>
+                <div class="metric"><span>Throughput:</span> <span id="mmtc-thr">--</span></div>
+                <div class="metric"><span>Latency:</span> <span id="mmtc-lat">--</span></div>
+                <div class="metric"><span>Packet Loss:</span> <span id="mmtc-loss">--</span></div>
+                <div class="metric"><span>QoS Satisfied:</span> <span id="mmtc-qos">--</span></div>
+            </div>
+        </div>
+
+        <div class="charts-section glass-panel">
+            <div class="chart-tabs">
+                <button class="tab-btn active" onclick="showChart('throughput')">Throughput</button>
+                <button class="tab-btn" onclick="showChart('latency')">Latency</button>
+                <button class="tab-btn" onclick="showChart('allocation')">Allocation</button>
+                <button class="tab-btn" onclick="showChart('qos')">QoS Satisfaction</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="mainChart"></canvas>
+            </div>
+        </div>
+
+        <div id="comparison-container" class="glass-panel">
+            <h3>Algorithm Comparison</h3>
+            <table id="comp-table">
+                <thead>
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Slice</th>
+                        <th>Avg Throughput</th>
+                        <th>Avg Latency</th>
+                        <th>Packet Loss</th>
+                        <th>QoS Satisfaction %</th>
+                    </tr>
+                </thead>
+                <tbody id="comp-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let mainChart = null;
+        let simData = null;
+        const colors = { eMBB: '#2196F3', URLLC: '#F44336', mMTC: '#4CAF50' };
+        let currentChartType = 'throughput';
+
+        async function runSimulation() {
+            const btn = document.getElementById('run-btn');
+            const spinner = document.getElementById('spinner');
+            btn.disabled = true;
+            spinner.style.display = 'block';
+
+            const payload = {
+                bandwidth: document.getElementById('bandwidth').value,
+                duration: document.getElementById('duration').value,
+                scenario: document.getElementById('scenario').value,
+                algorithm: document.getElementById('algorithm').value,
+                seed: document.getElementById('seed').value,
+                embb_users: document.getElementById('embb-users').value,
+                urllc_users: document.getElementById('urllc-users').value,
+                mmtc_users: document.getElementById('mmtc-users').value
+            };
+
+            try {
+                const res = await fetch('/api/simulate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                simData = await res.json();
+                updateDashboard();
+            } catch (err) {
+                console.error(err);
+                alert("Simulation failed.");
+            } finally {
+                btn.disabled = false;
+                spinner.style.display = 'none';
+            }
+        }
+
+        function updateDashboard() {
+            if (!simData) return;
+            
+            // Update summary cards
+            const s = simData.summary;
+            ['eMBB', 'URLLC', 'mMTC'].forEach(slice => {
+                const idPrefix = slice.toLowerCase();
+                if(s[slice]) {
+                    document.getElementById(`${idPrefix}-thr`).innerText = s[slice].avg_throughput.toFixed(2) + ' Mbps';
+                    document.getElementById(`${idPrefix}-lat`).innerText = s[slice].avg_latency.toFixed(2) + ' ms';
+                    document.getElementById(`${idPrefix}-loss`).innerText = s[slice].avg_packet_loss.toFixed(2) + ' %';
+                    
+                    const qos = s[slice].qos_satisfaction;
+                    const qosEl = document.getElementById(`${idPrefix}-qos`);
+                    qosEl.innerText = qos.toFixed(1) + '%';
+                    qosEl.style.color = qos > 90 ? '#4CAF50' : qos > 70 ? '#FFC107' : '#F44336';
+                }
+            });
+
+            // Update Comparison Table
+            const compContainer = document.getElementById('comparison-container');
+            const tbody = document.getElementById('comp-body');
+            tbody.innerHTML = '';
+            
+            if (Object.keys(simData.comparison).length > 0) {
+                compContainer.style.display = 'block';
+                for (const [algo, slices] of Object.entries(simData.comparison)) {
+                    for (const [slice, metrics] of Object.entries(slices)) {
+                        tbody.innerHTML += `<tr>
+                            <td>${algo}</td>
+                            <td style="color:${colors[slice]}">${slice}</td>
+                            <td>${metrics.avg_throughput.toFixed(2)}</td>
+                            <td>${metrics.avg_latency.toFixed(2)}</td>
+                            <td>${metrics.avg_packet_loss.toFixed(2)}%</td>
+                            <td>${metrics.qos_satisfaction.toFixed(1)}%</td>
+                        </tr>`;
+                    }
+                }
+            } else {
+                compContainer.style.display = 'none';
+            }
+
+            drawChart();
+        }
+
+        function showChart(type) {
+            currentChartType = type;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            drawChart();
+        }
+
+        function drawChart() {
+            if (!simData) return;
+            const ctx = document.getElementById('mainChart').getContext('2d');
+            if (mainChart) mainChart.destroy();
+
+            Chart.defaults.color = '#ccc';
+
+            // Filter for single algorithm if 'All' is selected, for time-series charts
+            // If 'All', just show the first algorithm's time series, or if it's QoS, show bar chart comparing algos
+            
+            let chartConfig = {};
+            const isAll = document.getElementById('algorithm').value === 'All';
+            const firstAlgo = simData.results[0].algorithm;
+            const timeData = simData.results.filter(r => r.algorithm === firstAlgo);
+            const labels = [...new Set(timeData.map(r => r.time))];
+
+            if (currentChartType === 'throughput' || currentChartType === 'latency' || currentChartType === 'allocation') {
+                const metricMap = { throughput: 'throughput', latency: 'latency', allocation: 'allocation' };
+                const metric = metricMap[currentChartType];
+                
+                const datasets = ['eMBB', 'URLLC', 'mMTC'].map(slice => {
+                    const sliceData = timeData.filter(r => r.slice === slice);
+                    return {
+                        label: slice + (isAll ? ` (${firstAlgo})` : ''),
+                        data: sliceData.map(r => r[metric]),
+                        borderColor: colors[slice],
+                        backgroundColor: colors[slice] + '40',
+                        fill: currentChartType === 'allocation',
+                        tension: 0.3
+                    };
+                });
+
+                chartConfig = {
+                    type: 'line',
+                    data: { labels, datasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: `${currentChartType.toUpperCase()} vs TIME` } },
+                        scales: {
+                            x: { title: { display: true, text: 'Time (s)' } },
+                            y: { title: { display: true, text: metric === 'allocation' ? 'Resource Share' : metric } }
+                        }
+                    }
+                };
+            } else if (currentChartType === 'qos') {
+                if (isAll) {
+                    const algos = Object.keys(simData.comparison);
+                    const datasets = ['eMBB', 'URLLC', 'mMTC'].map(slice => ({
+                        label: slice,
+                        data: algos.map(a => simData.comparison[a][slice].qos_satisfaction),
+                        backgroundColor: colors[slice]
+                    }));
+                    chartConfig = {
+                        type: 'bar',
+                        data: { labels: algos, datasets },
+                        options: {
+                            responsive: true, maintainAspectRatio: false,
+                            plugins: { title: { display: true, text: 'QoS Satisfaction Comparison' } },
+                            scales: { y: { beginAtZero: true, max: 100 } }
+                        }
+                    };
+                } else {
+                    chartConfig = {
+                        type: 'bar',
+                        data: {
+                            labels: ['eMBB', 'URLLC', 'mMTC'],
+                            datasets: [{
+                                label: 'QoS Satisfaction %',
+                                data: ['eMBB', 'URLLC', 'mMTC'].map(s => simData.summary[s].qos_satisfaction),
+                                backgroundColor: ['#2196F3', '#F44336', '#4CAF50']
+                            }]
+                        },
+                        options: { responsive: true, maintainAspectRatio: false, scales: { y: { max: 100 } } }
+                    };
+                }
+            }
+
+            mainChart = new Chart(ctx, chartConfig);
+        }
+    </script>
+</body>
+</html>

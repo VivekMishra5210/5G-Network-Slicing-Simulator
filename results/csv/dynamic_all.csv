@@ -1,0 +1,541 @@
+time,algorithm,scenario,slice,demand,allocation,throughput,latency,packet_loss,utilization,qos_satisfied
+0,Static,dynamic,eMBB,37.63,50.0,37.63,22.78,0.0,50.0,True
+0,Static,dynamic,URLLC,15.07,30.0,15.07,4.56,0.0,30.0,True
+0,Static,dynamic,mMTC,11.21,20.0,11.21,45.57,0.0,20.0,True
+1,Static,dynamic,eMBB,43.09,50.0,43.09,23.03,0.0,50.0,True
+1,Static,dynamic,URLLC,9.63,30.0,9.63,4.61,0.0,30.0,True
+1,Static,dynamic,mMTC,12.42,20.0,12.42,46.06,0.0,20.0,True
+2,Static,dynamic,eMBB,34.21,50.0,34.21,21.22,0.0,50.0,True
+2,Static,dynamic,URLLC,11.87,30.0,11.87,4.24,0.0,30.0,True
+2,Static,dynamic,mMTC,10.03,20.0,10.03,42.44,0.0,20.0,True
+3,Static,dynamic,eMBB,34.87,50.0,34.87,21.41,0.0,50.0,True
+3,Static,dynamic,URLLC,12.93,30.0,12.93,4.28,0.0,30.0,True
+3,Static,dynamic,mMTC,9.24,20.0,9.24,42.81,0.0,20.0,True
+4,Static,dynamic,eMBB,37.12,50.0,37.12,21.79,0.0,50.0,True
+4,Static,dynamic,URLLC,12.06,30.0,12.06,4.36,0.0,30.0,True
+4,Static,dynamic,mMTC,9.77,20.0,9.77,43.58,0.0,20.0,True
+5,Static,dynamic,eMBB,36.92,50.0,36.92,21.81,0.0,50.0,True
+5,Static,dynamic,URLLC,13.41,30.0,13.41,4.36,0.0,30.0,True
+5,Static,dynamic,mMTC,8.7,20.0,8.7,43.61,0.0,20.0,True
+6,Static,dynamic,eMBB,34.08,50.0,34.08,22.31,0.0,50.0,True
+6,Static,dynamic,URLLC,15.64,30.0,15.64,4.46,0.0,30.0,True
+6,Static,dynamic,mMTC,11.81,20.0,11.81,44.61,0.0,20.0,True
+7,Static,dynamic,eMBB,38.04,50.0,38.04,22.98,0.0,50.0,True
+7,Static,dynamic,URLLC,15.59,30.0,15.59,4.6,0.0,30.0,True
+7,Static,dynamic,mMTC,11.27,20.0,11.27,45.96,0.0,20.0,True
+8,Static,dynamic,eMBB,34.88,50.0,34.88,20.65,0.0,50.0,True
+8,Static,dynamic,URLLC,9.4,30.0,9.4,4.13,0.0,30.0,True
+8,Static,dynamic,mMTC,8.95,20.0,8.95,41.29,0.0,20.0,True
+9,Static,dynamic,eMBB,38.03,50.0,38.03,21.91,0.0,50.0,True
+9,Static,dynamic,URLLC,11.73,30.0,11.73,4.38,0.0,30.0,True
+9,Static,dynamic,mMTC,9.79,20.0,9.79,43.82,0.0,20.0,True
+10,Static,dynamic,eMBB,36.33,50.0,36.33,22.83,0.0,50.0,True
+10,Static,dynamic,URLLC,15.82,30.0,15.82,4.57,0.0,30.0,True
+10,Static,dynamic,mMTC,11.98,20.0,11.98,45.65,0.0,20.0,True
+11,Static,dynamic,eMBB,36.5,50.0,36.5,21.61,0.0,50.0,True
+11,Static,dynamic,URLLC,12.12,30.0,12.12,4.32,0.0,30.0,True
+11,Static,dynamic,mMTC,9.44,20.0,9.44,43.22,0.0,20.0,True
+12,Static,dynamic,eMBB,39.49,50.0,39.49,21.8,0.0,50.0,True
+12,Static,dynamic,URLLC,9.42,30.0,9.42,4.36,0.0,30.0,True
+12,Static,dynamic,mMTC,10.08,20.0,10.08,43.59,0.0,20.0,True
+13,Static,dynamic,eMBB,40.02,50.0,40.02,22.67,0.0,50.0,True
+13,Static,dynamic,URLLC,10.96,30.0,10.96,4.53,0.0,30.0,True
+13,Static,dynamic,mMTC,12.39,20.0,12.39,45.35,0.0,20.0,True
+14,Static,dynamic,eMBB,42.31,50.0,42.31,22.68,0.0,50.0,True
+14,Static,dynamic,URLLC,12.41,30.0,12.41,4.54,0.0,30.0,True
+14,Static,dynamic,mMTC,8.67,20.0,8.67,45.36,0.0,20.0,True
+15,Static,dynamic,eMBB,41.13,50.0,41.13,23.12,0.0,50.0,True
+15,Static,dynamic,URLLC,16.02,30.0,16.02,4.62,0.0,30.0,True
+15,Static,dynamic,mMTC,8.48,20.0,8.48,46.25,0.0,20.0,True
+16,Static,dynamic,eMBB,37.79,50.0,37.79,21.75,0.0,50.0,True
+16,Static,dynamic,URLLC,11.54,30.0,11.54,4.35,0.0,30.0,True
+16,Static,dynamic,mMTC,9.42,20.0,9.42,43.5,0.0,20.0,True
+17,Static,dynamic,eMBB,37.18,50.0,37.18,22.15,0.0,50.0,True
+17,Static,dynamic,URLLC,13.76,30.0,13.76,4.43,0.0,30.0,True
+17,Static,dynamic,mMTC,9.83,20.0,9.83,44.31,0.0,20.0,True
+18,Static,dynamic,eMBB,34.62,50.0,34.62,21.6,0.0,50.0,True
+18,Static,dynamic,URLLC,12.48,30.0,12.48,4.32,0.0,30.0,True
+18,Static,dynamic,mMTC,10.88,20.0,10.88,43.19,0.0,20.0,True
+19,Static,dynamic,eMBB,38.09,50.0,38.09,22.83,0.0,50.0,True
+19,Static,dynamic,URLLC,16.6,30.0,16.6,4.57,0.0,30.0,True
+19,Static,dynamic,mMTC,9.47,20.0,9.47,45.66,0.0,20.0,True
+20,Static,dynamic,eMBB,79.07,50.0,50.0,32.91,36.77,50.0,False
+20,Static,dynamic,URLLC,13.19,30.0,13.19,6.0,0.0,30.0,False
+20,Static,dynamic,mMTC,10.78,20.0,10.78,60.0,0.0,20.0,True
+21,Static,dynamic,eMBB,69.93,50.0,50.0,30.61,28.5,50.0,False
+21,Static,dynamic,URLLC,12.86,30.0,12.86,5.72,0.0,30.0,False
+21,Static,dynamic,mMTC,10.31,20.0,10.31,57.24,0.0,20.0,True
+22,Static,dynamic,eMBB,74.39,50.0,50.0,31.81,32.79,50.0,False
+22,Static,dynamic,URLLC,11.3,30.0,11.3,5.87,0.0,30.0,False
+22,Static,dynamic,mMTC,11.17,20.0,11.17,58.74,0.0,20.0,True
+23,Static,dynamic,eMBB,88.98,50.0,50.0,33.9,43.81,50.0,False
+23,Static,dynamic,URLLC,12.43,30.0,12.43,6.0,0.0,30.0,False
+23,Static,dynamic,mMTC,12.72,20.0,12.72,60.0,0.0,20.0,True
+24,Static,dynamic,eMBB,73.96,50.0,50.0,32.06,32.4,50.0,False
+24,Static,dynamic,URLLC,15.05,30.0,15.05,5.93,0.0,30.0,False
+24,Static,dynamic,mMTC,9.29,20.0,9.29,59.32,0.0,20.0,True
+25,Static,dynamic,eMBB,75.3,50.0,50.0,32.1,33.6,50.0,False
+25,Static,dynamic,URLLC,12.31,30.0,12.31,5.91,0.0,30.0,False
+25,Static,dynamic,mMTC,10.25,20.0,10.25,59.14,0.0,20.0,True
+26,Static,dynamic,eMBB,93.06,50.0,50.0,34.31,46.27,50.0,False
+26,Static,dynamic,URLLC,11.24,30.0,11.24,6.0,0.0,30.0,False
+26,Static,dynamic,mMTC,10.41,20.0,10.41,60.0,0.0,20.0,True
+27,Static,dynamic,eMBB,84.41,50.0,50.0,33.44,40.76,50.0,False
+27,Static,dynamic,URLLC,12.91,30.0,12.91,6.0,0.0,30.0,False
+27,Static,dynamic,mMTC,9.75,20.0,9.75,60.0,0.0,20.0,True
+28,Static,dynamic,eMBB,79.09,50.0,50.0,32.91,36.78,50.0,False
+28,Static,dynamic,URLLC,12.96,30.0,12.96,6.0,0.0,30.0,False
+28,Static,dynamic,mMTC,11.13,20.0,11.13,60.0,0.0,20.0,True
+29,Static,dynamic,eMBB,71.08,50.0,50.0,31.02,29.65,50.0,False
+29,Static,dynamic,URLLC,12.37,30.0,12.37,5.78,0.0,30.0,False
+29,Static,dynamic,mMTC,11.13,20.0,11.13,57.83,0.0,20.0,True
+30,Static,dynamic,eMBB,85.55,50.0,50.0,33.55,41.55,50.0,False
+30,Static,dynamic,URLLC,9.99,30.0,9.99,6.0,0.0,30.0,False
+30,Static,dynamic,mMTC,11.62,20.0,11.62,60.0,0.0,20.0,True
+31,Static,dynamic,eMBB,92.5,50.0,50.0,34.25,45.95,50.0,False
+31,Static,dynamic,URLLC,13.04,30.0,13.04,6.0,0.0,30.0,False
+31,Static,dynamic,mMTC,9.52,20.0,9.52,60.0,0.0,20.0,True
+32,Static,dynamic,eMBB,77.51,50.0,50.0,32.75,35.49,50.0,False
+32,Static,dynamic,URLLC,10.98,30.0,10.98,6.0,0.0,30.0,False
+32,Static,dynamic,mMTC,13.1,20.0,13.1,60.0,0.0,20.0,True
+33,Static,dynamic,eMBB,83.1,50.0,50.0,33.31,39.83,50.0,False
+33,Static,dynamic,URLLC,13.51,30.0,13.51,6.0,0.0,30.0,False
+33,Static,dynamic,mMTC,9.11,20.0,9.11,60.0,0.0,20.0,True
+34,Static,dynamic,eMBB,76.9,50.0,50.0,32.27,34.98,50.0,False
+34,Static,dynamic,URLLC,10.86,30.0,10.86,5.92,0.0,30.0,False
+34,Static,dynamic,mMTC,10.13,20.0,10.13,59.15,0.0,20.0,True
+35,Static,dynamic,eMBB,80.4,50.0,50.0,33.04,37.81,50.0,False
+35,Static,dynamic,URLLC,14.47,30.0,14.47,6.0,0.0,30.0,False
+35,Static,dynamic,mMTC,8.02,20.0,8.02,60.0,0.0,20.0,True
+36,Static,dynamic,eMBB,93.63,50.0,50.0,34.36,46.6,50.0,False
+36,Static,dynamic,URLLC,12.67,30.0,12.67,6.0,0.0,30.0,False
+36,Static,dynamic,mMTC,11.34,20.0,11.34,60.0,0.0,20.0,True
+37,Static,dynamic,eMBB,88.57,50.0,50.0,33.86,43.55,50.0,False
+37,Static,dynamic,URLLC,12.11,30.0,12.11,6.0,0.0,30.0,False
+37,Static,dynamic,mMTC,9.87,20.0,9.87,60.0,0.0,20.0,True
+38,Static,dynamic,eMBB,90.26,50.0,50.0,34.03,44.6,50.0,False
+38,Static,dynamic,URLLC,14.92,30.0,14.92,6.0,0.0,30.0,False
+38,Static,dynamic,mMTC,12.91,20.0,12.91,60.0,0.0,20.0,True
+39,Static,dynamic,eMBB,86.26,50.0,50.0,33.63,42.03,50.0,False
+39,Static,dynamic,URLLC,13.19,30.0,13.19,6.0,0.0,30.0,False
+39,Static,dynamic,mMTC,11.94,20.0,11.94,60.0,0.0,20.0,True
+40,Static,dynamic,eMBB,38.72,50.0,38.72,29.72,0.0,50.0,True
+40,Static,dynamic,URLLC,51.34,30.0,30.0,9.5,41.57,30.0,False
+40,Static,dynamic,mMTC,8.52,20.0,8.52,59.43,0.0,20.0,True
+41,Static,dynamic,eMBB,41.27,50.0,41.27,30.0,0.0,50.0,True
+41,Static,dynamic,URLLC,50.14,30.0,30.0,9.36,40.17,30.0,False
+41,Static,dynamic,mMTC,9.24,20.0,9.24,60.0,0.0,20.0,True
+42,Static,dynamic,eMBB,36.82,50.0,36.82,30.0,0.0,50.0,True
+42,Static,dynamic,URLLC,59.17,30.0,30.0,10.86,49.3,30.0,False
+42,Static,dynamic,mMTC,13.47,20.0,13.47,60.0,0.0,20.0,True
+43,Static,dynamic,eMBB,43.22,50.0,43.22,30.0,0.0,50.0,True
+43,Static,dynamic,URLLC,62.5,30.0,30.0,11.42,52.0,30.0,False
+43,Static,dynamic,mMTC,12.09,20.0,12.09,60.0,0.0,20.0,True
+44,Static,dynamic,eMBB,42.18,50.0,42.18,30.0,0.0,50.0,True
+44,Static,dynamic,URLLC,57.08,30.0,30.0,10.51,47.44,30.0,False
+44,Static,dynamic,mMTC,9.42,20.0,9.42,60.0,0.0,20.0,True
+45,Static,dynamic,eMBB,37.18,50.0,37.18,30.0,0.0,50.0,True
+45,Static,dynamic,URLLC,59.72,30.0,30.0,10.95,49.77,30.0,False
+45,Static,dynamic,mMTC,11.78,20.0,11.78,60.0,0.0,20.0,True
+46,Static,dynamic,eMBB,43.22,50.0,43.22,30.0,0.0,50.0,True
+46,Static,dynamic,URLLC,66.6,30.0,30.0,12.1,54.96,30.0,False
+46,Static,dynamic,mMTC,9.49,20.0,9.49,60.0,0.0,20.0,True
+47,Static,dynamic,eMBB,41.3,50.0,41.3,30.0,0.0,50.0,True
+47,Static,dynamic,URLLC,50.73,30.0,30.0,9.46,40.87,30.0,False
+47,Static,dynamic,mMTC,9.24,20.0,9.24,60.0,0.0,20.0,True
+48,Static,dynamic,eMBB,38.45,50.0,38.45,29.65,0.0,50.0,True
+48,Static,dynamic,URLLC,51.85,30.0,30.0,9.57,42.14,30.0,False
+48,Static,dynamic,mMTC,7.97,20.0,7.97,59.31,0.0,20.0,True
+49,Static,dynamic,eMBB,39.86,50.0,39.86,30.0,0.0,50.0,True
+49,Static,dynamic,URLLC,64.14,30.0,30.0,11.69,53.23,30.0,False
+49,Static,dynamic,mMTC,6.75,20.0,6.75,60.0,0.0,20.0,True
+50,Static,dynamic,eMBB,39.83,50.0,39.83,23.09,0.0,50.0,True
+50,Static,dynamic,URLLC,14.34,30.0,14.34,4.62,0.0,30.0,True
+50,Static,dynamic,mMTC,11.28,20.0,11.28,46.18,0.0,20.0,True
+51,Static,dynamic,eMBB,40.88,50.0,40.88,22.72,0.0,50.0,True
+51,Static,dynamic,URLLC,14.07,30.0,14.07,4.54,0.0,30.0,True
+51,Static,dynamic,mMTC,8.62,20.0,8.62,45.43,0.0,20.0,True
+52,Static,dynamic,eMBB,43.93,50.0,43.93,23.76,0.0,50.0,True
+52,Static,dynamic,URLLC,12.14,30.0,12.14,4.75,0.0,30.0,True
+52,Static,dynamic,mMTC,12.73,20.0,12.73,47.52,0.0,20.0,True
+53,Static,dynamic,eMBB,34.77,50.0,34.77,21.53,0.0,50.0,True
+53,Static,dynamic,URLLC,14.43,30.0,14.43,4.31,0.0,30.0,True
+53,Static,dynamic,mMTC,8.43,20.0,8.43,43.05,0.0,20.0,True
+54,Static,dynamic,eMBB,40.66,50.0,40.66,23.48,0.0,50.0,True
+54,Static,dynamic,URLLC,15.26,30.0,15.26,4.7,0.0,30.0,True
+54,Static,dynamic,mMTC,11.49,20.0,11.49,46.97,0.0,20.0,True
+55,Static,dynamic,eMBB,42.36,50.0,42.36,23.53,0.0,50.0,True
+55,Static,dynamic,URLLC,16.23,30.0,16.23,4.71,0.0,30.0,True
+55,Static,dynamic,mMTC,9.06,20.0,9.06,47.06,0.0,20.0,True
+56,Static,dynamic,eMBB,39.96,50.0,39.96,23.04,0.0,50.0,True
+56,Static,dynamic,URLLC,14.21,30.0,14.21,4.61,0.0,30.0,True
+56,Static,dynamic,mMTC,11.03,20.0,11.03,46.08,0.0,20.0,True
+57,Static,dynamic,eMBB,44.29,50.0,44.29,23.7,0.0,50.0,True
+57,Static,dynamic,URLLC,13.21,30.0,13.21,4.74,0.0,30.0,True
+57,Static,dynamic,mMTC,11.0,20.0,11.0,47.4,0.0,20.0,True
+58,Static,dynamic,eMBB,38.62,50.0,38.62,22.32,0.0,50.0,True
+58,Static,dynamic,URLLC,9.44,30.0,9.44,4.46,0.0,30.0,True
+58,Static,dynamic,mMTC,13.53,20.0,13.53,44.64,0.0,20.0,True
+59,Static,dynamic,eMBB,40.55,50.0,40.55,22.66,0.0,50.0,True
+59,Static,dynamic,URLLC,12.62,30.0,12.62,4.53,0.0,30.0,True
+59,Static,dynamic,mMTC,10.11,20.0,10.11,45.31,0.0,20.0,True
+0,Round Robin,dynamic,eMBB,37.63,37.63,37.63,22.78,0.0,37.63,True
+0,Round Robin,dynamic,URLLC,15.07,15.07,15.07,4.56,0.0,15.07,True
+0,Round Robin,dynamic,mMTC,11.21,11.21,11.21,45.57,0.0,11.21,True
+1,Round Robin,dynamic,eMBB,43.09,43.09,43.09,23.03,0.0,43.09,True
+1,Round Robin,dynamic,URLLC,9.63,10.0,9.63,4.61,0.0,10.0,True
+1,Round Robin,dynamic,mMTC,12.42,12.42,12.42,46.06,0.0,12.42,True
+2,Round Robin,dynamic,eMBB,34.21,34.21,34.21,21.22,0.0,34.21,True
+2,Round Robin,dynamic,URLLC,11.87,11.87,11.87,4.24,0.0,11.87,True
+2,Round Robin,dynamic,mMTC,10.03,10.03,10.03,42.44,0.0,10.03,True
+3,Round Robin,dynamic,eMBB,34.87,34.87,34.87,21.41,0.0,34.87,True
+3,Round Robin,dynamic,URLLC,12.93,12.93,12.93,4.28,0.0,12.93,True
+3,Round Robin,dynamic,mMTC,9.24,9.24,9.24,42.81,0.0,9.24,True
+4,Round Robin,dynamic,eMBB,37.12,37.12,37.12,21.79,0.0,37.12,True
+4,Round Robin,dynamic,URLLC,12.06,12.06,12.06,4.36,0.0,12.06,True
+4,Round Robin,dynamic,mMTC,9.77,9.77,9.77,43.58,0.0,9.77,True
+5,Round Robin,dynamic,eMBB,36.92,36.92,36.92,21.81,0.0,36.92,True
+5,Round Robin,dynamic,URLLC,13.41,13.41,13.41,4.36,0.0,13.41,True
+5,Round Robin,dynamic,mMTC,8.7,8.7,8.7,43.61,0.0,8.7,True
+6,Round Robin,dynamic,eMBB,34.08,34.08,34.08,22.31,0.0,34.08,True
+6,Round Robin,dynamic,URLLC,15.64,15.64,15.64,4.46,0.0,15.64,True
+6,Round Robin,dynamic,mMTC,11.81,11.81,11.81,44.61,0.0,11.81,True
+7,Round Robin,dynamic,eMBB,38.04,38.04,38.04,22.98,0.0,38.04,True
+7,Round Robin,dynamic,URLLC,15.59,15.59,15.59,4.6,0.0,15.59,True
+7,Round Robin,dynamic,mMTC,11.27,11.27,11.27,45.96,0.0,11.27,True
+8,Round Robin,dynamic,eMBB,34.88,34.88,34.88,20.65,0.0,34.88,True
+8,Round Robin,dynamic,URLLC,9.4,10.0,9.4,4.13,0.0,10.0,True
+8,Round Robin,dynamic,mMTC,8.95,8.95,8.95,41.29,0.0,8.95,True
+9,Round Robin,dynamic,eMBB,38.03,38.03,38.03,21.91,0.0,38.03,True
+9,Round Robin,dynamic,URLLC,11.73,11.73,11.73,4.38,0.0,11.73,True
+9,Round Robin,dynamic,mMTC,9.79,9.79,9.79,43.82,0.0,9.79,True
+10,Round Robin,dynamic,eMBB,36.33,36.33,36.33,22.83,0.0,36.33,True
+10,Round Robin,dynamic,URLLC,15.82,15.82,15.82,4.57,0.0,15.82,True
+10,Round Robin,dynamic,mMTC,11.98,11.98,11.98,45.65,0.0,11.98,True
+11,Round Robin,dynamic,eMBB,36.5,36.5,36.5,21.61,0.0,36.5,True
+11,Round Robin,dynamic,URLLC,12.12,12.12,12.12,4.32,0.0,12.12,True
+11,Round Robin,dynamic,mMTC,9.44,9.44,9.44,43.22,0.0,9.44,True
+12,Round Robin,dynamic,eMBB,39.49,39.49,39.49,21.8,0.0,39.49,True
+12,Round Robin,dynamic,URLLC,9.42,10.0,9.42,4.36,0.0,10.0,True
+12,Round Robin,dynamic,mMTC,10.08,10.08,10.08,43.59,0.0,10.08,True
+13,Round Robin,dynamic,eMBB,40.02,40.02,40.02,22.67,0.0,40.02,True
+13,Round Robin,dynamic,URLLC,10.96,10.96,10.96,4.53,0.0,10.96,True
+13,Round Robin,dynamic,mMTC,12.39,12.39,12.39,45.35,0.0,12.39,True
+14,Round Robin,dynamic,eMBB,42.31,42.31,42.31,22.68,0.0,42.31,True
+14,Round Robin,dynamic,URLLC,12.41,12.41,12.41,4.54,0.0,12.41,True
+14,Round Robin,dynamic,mMTC,8.67,8.67,8.67,45.36,0.0,8.67,True
+15,Round Robin,dynamic,eMBB,41.13,41.13,41.13,23.12,0.0,41.13,True
+15,Round Robin,dynamic,URLLC,16.02,16.02,16.02,4.62,0.0,16.02,True
+15,Round Robin,dynamic,mMTC,8.48,8.48,8.48,46.25,0.0,8.48,True
+16,Round Robin,dynamic,eMBB,37.79,37.79,37.79,21.75,0.0,37.79,True
+16,Round Robin,dynamic,URLLC,11.54,11.54,11.54,4.35,0.0,11.54,True
+16,Round Robin,dynamic,mMTC,9.42,9.42,9.42,43.5,0.0,9.42,True
+17,Round Robin,dynamic,eMBB,37.18,37.18,37.18,22.15,0.0,37.18,True
+17,Round Robin,dynamic,URLLC,13.76,13.76,13.76,4.43,0.0,13.76,True
+17,Round Robin,dynamic,mMTC,9.83,9.83,9.83,44.31,0.0,9.83,True
+18,Round Robin,dynamic,eMBB,34.62,34.62,34.62,21.6,0.0,34.62,True
+18,Round Robin,dynamic,URLLC,12.48,12.48,12.48,4.32,0.0,12.48,True
+18,Round Robin,dynamic,mMTC,10.88,10.88,10.88,43.19,0.0,10.88,True
+19,Round Robin,dynamic,eMBB,38.09,38.09,38.09,22.83,0.0,38.09,True
+19,Round Robin,dynamic,URLLC,16.6,16.6,16.6,4.57,0.0,16.6,True
+19,Round Robin,dynamic,mMTC,9.47,9.47,9.47,45.66,0.0,9.47,True
+20,Round Robin,dynamic,eMBB,79.07,60.0,60.0,31.59,24.12,60.0,False
+20,Round Robin,dynamic,URLLC,13.19,13.19,13.19,6.0,0.0,13.19,False
+20,Round Robin,dynamic,mMTC,10.78,10.78,10.78,60.0,0.0,10.78,True
+21,Round Robin,dynamic,eMBB,69.93,60.0,60.0,29.45,14.2,60.0,False
+21,Round Robin,dynamic,URLLC,12.86,12.86,12.86,5.72,0.0,12.86,False
+21,Round Robin,dynamic,mMTC,10.31,10.31,10.31,57.24,0.0,10.31,True
+22,Round Robin,dynamic,eMBB,74.39,60.0,60.0,30.57,19.34,60.0,False
+22,Round Robin,dynamic,URLLC,11.3,11.3,11.3,5.87,0.0,11.3,False
+22,Round Robin,dynamic,mMTC,11.17,11.17,11.17,58.74,0.0,11.17,True
+23,Round Robin,dynamic,eMBB,88.98,60.0,60.0,32.41,32.57,60.0,False
+23,Round Robin,dynamic,URLLC,12.43,12.43,12.43,6.0,0.0,12.43,False
+23,Round Robin,dynamic,mMTC,12.72,12.72,12.72,60.0,0.0,12.72,True
+24,Round Robin,dynamic,eMBB,73.96,60.0,60.0,30.82,18.88,60.0,False
+24,Round Robin,dynamic,URLLC,15.05,15.05,15.05,5.93,0.0,15.05,False
+24,Round Robin,dynamic,mMTC,9.29,9.29,9.29,59.32,0.0,9.29,True
+25,Round Robin,dynamic,eMBB,75.3,60.0,60.0,30.84,20.32,60.0,False
+25,Round Robin,dynamic,URLLC,12.31,12.31,12.31,5.91,0.0,12.31,False
+25,Round Robin,dynamic,mMTC,10.25,10.25,10.25,59.14,0.0,10.25,True
+26,Round Robin,dynamic,eMBB,93.06,60.0,60.0,32.76,35.53,60.0,False
+26,Round Robin,dynamic,URLLC,11.24,11.24,11.24,6.0,0.0,11.24,False
+26,Round Robin,dynamic,mMTC,10.41,10.41,10.41,60.0,0.0,10.41,True
+27,Round Robin,dynamic,eMBB,84.41,60.0,60.0,32.03,28.92,60.0,False
+27,Round Robin,dynamic,URLLC,12.91,12.91,12.91,6.0,0.0,12.91,False
+27,Round Robin,dynamic,mMTC,9.75,9.75,9.75,60.0,0.0,9.75,True
+28,Round Robin,dynamic,eMBB,79.09,60.0,60.0,31.59,24.14,60.0,False
+28,Round Robin,dynamic,URLLC,12.96,12.96,12.96,6.0,0.0,12.96,False
+28,Round Robin,dynamic,mMTC,11.13,11.13,11.13,60.0,0.0,11.13,True
+29,Round Robin,dynamic,eMBB,71.08,60.0,60.0,29.84,15.58,60.0,False
+29,Round Robin,dynamic,URLLC,12.37,12.37,12.37,5.78,0.0,12.37,False
+29,Round Robin,dynamic,mMTC,11.13,11.13,11.13,57.83,0.0,11.13,True
+30,Round Robin,dynamic,eMBB,85.55,60.0,60.0,32.13,29.86,60.0,False
+30,Round Robin,dynamic,URLLC,9.99,10.0,9.99,6.0,0.0,10.0,False
+30,Round Robin,dynamic,mMTC,11.62,11.62,11.62,60.0,0.0,11.62,True
+31,Round Robin,dynamic,eMBB,92.5,60.0,60.0,32.71,35.13,60.0,False
+31,Round Robin,dynamic,URLLC,13.04,13.04,13.04,6.0,0.0,13.04,False
+31,Round Robin,dynamic,mMTC,9.52,9.52,9.52,60.0,0.0,9.52,True
+32,Round Robin,dynamic,eMBB,77.51,60.0,60.0,31.46,22.59,60.0,False
+32,Round Robin,dynamic,URLLC,10.98,10.98,10.98,6.0,0.0,10.98,False
+32,Round Robin,dynamic,mMTC,13.1,13.1,13.1,60.0,0.0,13.1,True
+33,Round Robin,dynamic,eMBB,83.1,60.0,60.0,31.93,27.8,60.0,False
+33,Round Robin,dynamic,URLLC,13.51,13.51,13.51,6.0,0.0,13.51,False
+33,Round Robin,dynamic,mMTC,9.11,9.11,9.11,60.0,0.0,9.11,True
+34,Round Robin,dynamic,eMBB,76.9,60.0,60.0,30.99,21.97,60.0,False
+34,Round Robin,dynamic,URLLC,10.86,10.86,10.86,5.92,0.0,10.86,False
+34,Round Robin,dynamic,mMTC,10.13,10.13,10.13,59.15,0.0,10.13,True
+35,Round Robin,dynamic,eMBB,80.4,60.0,60.0,31.7,25.38,60.0,False
+35,Round Robin,dynamic,URLLC,14.47,14.47,14.47,6.0,0.0,14.47,False
+35,Round Robin,dynamic,mMTC,8.02,8.02,8.02,60.0,0.0,8.02,True
+36,Round Robin,dynamic,eMBB,93.63,60.0,60.0,32.8,35.92,60.0,False
+36,Round Robin,dynamic,URLLC,12.67,12.67,12.67,6.0,0.0,12.67,False
+36,Round Robin,dynamic,mMTC,11.34,11.34,11.34,60.0,0.0,11.34,True
+37,Round Robin,dynamic,eMBB,88.57,60.0,60.0,32.38,32.26,60.0,False
+37,Round Robin,dynamic,URLLC,12.11,12.11,12.11,6.0,0.0,12.11,False
+37,Round Robin,dynamic,mMTC,9.87,9.87,9.87,60.0,0.0,9.87,True
+38,Round Robin,dynamic,eMBB,90.26,60.0,60.0,32.52,33.52,60.0,False
+38,Round Robin,dynamic,URLLC,14.92,14.92,14.92,6.0,0.0,14.92,False
+38,Round Robin,dynamic,mMTC,12.91,12.91,12.91,60.0,0.0,12.91,True
+39,Round Robin,dynamic,eMBB,86.26,60.0,60.0,32.19,30.44,60.0,False
+39,Round Robin,dynamic,URLLC,13.19,13.19,13.19,6.0,0.0,13.19,False
+39,Round Robin,dynamic,mMTC,11.94,11.94,11.94,60.0,0.0,11.94,True
+40,Round Robin,dynamic,eMBB,38.72,38.72,38.72,29.72,0.0,38.72,True
+40,Round Robin,dynamic,URLLC,51.34,50.0,50.0,6.08,2.62,50.0,False
+40,Round Robin,dynamic,mMTC,8.52,8.52,8.52,59.43,0.0,8.52,True
+41,Round Robin,dynamic,eMBB,41.27,41.27,41.27,30.0,0.0,41.27,True
+41,Round Robin,dynamic,URLLC,50.14,49.5,49.5,6.06,1.28,49.5,False
+41,Round Robin,dynamic,mMTC,9.24,9.24,9.24,60.0,0.0,9.24,True
+42,Round Robin,dynamic,eMBB,36.82,36.82,36.82,30.0,0.0,36.82,True
+42,Round Robin,dynamic,URLLC,59.17,49.71,49.71,6.95,15.99,49.71,False
+42,Round Robin,dynamic,mMTC,13.47,13.47,13.47,60.0,0.0,13.47,True
+43,Round Robin,dynamic,eMBB,43.22,43.22,43.22,30.0,0.0,43.22,True
+43,Round Robin,dynamic,URLLC,62.5,44.69,44.69,7.99,28.49,44.69,False
+43,Round Robin,dynamic,mMTC,12.09,12.09,12.09,60.0,0.0,12.09,True
+44,Round Robin,dynamic,eMBB,42.18,42.18,42.18,30.0,0.0,42.18,True
+44,Round Robin,dynamic,URLLC,57.08,48.4,48.4,6.9,15.21,48.4,False
+44,Round Robin,dynamic,mMTC,9.42,9.42,9.42,60.0,0.0,9.42,True
+45,Round Robin,dynamic,eMBB,37.18,37.18,37.18,30.0,0.0,37.18,True
+45,Round Robin,dynamic,URLLC,59.72,50.0,50.0,6.97,16.28,50.0,False
+45,Round Robin,dynamic,mMTC,11.78,11.78,11.78,60.0,0.0,11.78,True
+46,Round Robin,dynamic,eMBB,43.22,43.22,43.22,30.0,0.0,43.22,True
+46,Round Robin,dynamic,URLLC,66.6,47.29,47.29,8.04,28.99,47.29,False
+46,Round Robin,dynamic,mMTC,9.49,9.49,9.49,60.0,0.0,9.49,True
+47,Round Robin,dynamic,eMBB,41.3,41.3,41.3,30.0,0.0,41.3,True
+47,Round Robin,dynamic,URLLC,50.73,49.46,49.46,6.13,2.5,49.46,False
+47,Round Robin,dynamic,mMTC,9.24,9.24,9.24,60.0,0.0,9.24,True
+48,Round Robin,dynamic,eMBB,38.45,38.45,38.45,29.65,0.0,38.45,True
+48,Round Robin,dynamic,URLLC,51.85,50.0,50.0,6.12,3.57,50.0,False
+48,Round Robin,dynamic,mMTC,7.97,7.97,7.97,59.31,0.0,7.97,True
+49,Round Robin,dynamic,eMBB,39.86,39.86,39.86,30.0,0.0,39.86,True
+49,Round Robin,dynamic,URLLC,64.14,50.0,50.0,7.41,22.05,50.0,False
+49,Round Robin,dynamic,mMTC,6.75,6.75,6.75,60.0,0.0,6.75,True
+50,Round Robin,dynamic,eMBB,39.83,39.83,39.83,23.09,0.0,39.83,True
+50,Round Robin,dynamic,URLLC,14.34,14.34,14.34,4.62,0.0,14.34,True
+50,Round Robin,dynamic,mMTC,11.28,11.28,11.28,46.18,0.0,11.28,True
+51,Round Robin,dynamic,eMBB,40.88,40.88,40.88,22.72,0.0,40.88,True
+51,Round Robin,dynamic,URLLC,14.07,14.07,14.07,4.54,0.0,14.07,True
+51,Round Robin,dynamic,mMTC,8.62,8.62,8.62,45.43,0.0,8.62,True
+52,Round Robin,dynamic,eMBB,43.93,43.93,43.93,23.76,0.0,43.93,True
+52,Round Robin,dynamic,URLLC,12.14,12.14,12.14,4.75,0.0,12.14,True
+52,Round Robin,dynamic,mMTC,12.73,12.73,12.73,47.52,0.0,12.73,True
+53,Round Robin,dynamic,eMBB,34.77,34.77,34.77,21.53,0.0,34.77,True
+53,Round Robin,dynamic,URLLC,14.43,14.43,14.43,4.31,0.0,14.43,True
+53,Round Robin,dynamic,mMTC,8.43,8.43,8.43,43.05,0.0,8.43,True
+54,Round Robin,dynamic,eMBB,40.66,40.66,40.66,23.48,0.0,40.66,True
+54,Round Robin,dynamic,URLLC,15.26,15.26,15.26,4.7,0.0,15.26,True
+54,Round Robin,dynamic,mMTC,11.49,11.49,11.49,46.97,0.0,11.49,True
+55,Round Robin,dynamic,eMBB,42.36,42.36,42.36,23.53,0.0,42.36,True
+55,Round Robin,dynamic,URLLC,16.23,16.23,16.23,4.71,0.0,16.23,True
+55,Round Robin,dynamic,mMTC,9.06,9.06,9.06,47.06,0.0,9.06,True
+56,Round Robin,dynamic,eMBB,39.96,39.96,39.96,23.04,0.0,39.96,True
+56,Round Robin,dynamic,URLLC,14.21,14.21,14.21,4.61,0.0,14.21,True
+56,Round Robin,dynamic,mMTC,11.03,11.03,11.03,46.08,0.0,11.03,True
+57,Round Robin,dynamic,eMBB,44.29,44.29,44.29,23.7,0.0,44.29,True
+57,Round Robin,dynamic,URLLC,13.21,13.21,13.21,4.74,0.0,13.21,True
+57,Round Robin,dynamic,mMTC,11.0,11.0,11.0,47.4,0.0,11.0,True
+58,Round Robin,dynamic,eMBB,38.62,38.62,38.62,22.32,0.0,38.62,True
+58,Round Robin,dynamic,URLLC,9.44,10.0,9.44,4.46,0.0,10.0,True
+58,Round Robin,dynamic,mMTC,13.53,13.53,13.53,44.64,0.0,13.53,True
+59,Round Robin,dynamic,eMBB,40.55,40.55,40.55,22.66,0.0,40.55,True
+59,Round Robin,dynamic,URLLC,12.62,12.62,12.62,4.53,0.0,12.62,True
+59,Round Robin,dynamic,mMTC,10.11,10.11,10.11,45.31,0.0,10.11,True
+0,QoS Adaptive,dynamic,eMBB,37.63,37.63,37.63,22.78,0.0,37.63,True
+0,QoS Adaptive,dynamic,URLLC,15.07,15.07,15.07,4.56,0.0,15.07,True
+0,QoS Adaptive,dynamic,mMTC,11.21,11.21,11.21,45.57,0.0,11.21,True
+1,QoS Adaptive,dynamic,eMBB,43.09,43.09,43.09,23.03,0.0,43.09,True
+1,QoS Adaptive,dynamic,URLLC,9.63,10.0,9.63,4.61,0.0,10.0,True
+1,QoS Adaptive,dynamic,mMTC,12.42,12.42,12.42,46.06,0.0,12.42,True
+2,QoS Adaptive,dynamic,eMBB,34.21,34.21,34.21,21.22,0.0,34.21,True
+2,QoS Adaptive,dynamic,URLLC,11.87,11.87,11.87,4.24,0.0,11.87,True
+2,QoS Adaptive,dynamic,mMTC,10.03,10.03,10.03,42.44,0.0,10.03,True
+3,QoS Adaptive,dynamic,eMBB,34.87,34.87,34.87,21.41,0.0,34.87,True
+3,QoS Adaptive,dynamic,URLLC,12.93,12.93,12.93,4.28,0.0,12.93,True
+3,QoS Adaptive,dynamic,mMTC,9.24,9.24,9.24,42.81,0.0,9.24,True
+4,QoS Adaptive,dynamic,eMBB,37.12,37.12,37.12,21.79,0.0,37.12,True
+4,QoS Adaptive,dynamic,URLLC,12.06,12.06,12.06,4.36,0.0,12.06,True
+4,QoS Adaptive,dynamic,mMTC,9.77,9.77,9.77,43.58,0.0,9.77,True
+5,QoS Adaptive,dynamic,eMBB,36.92,36.92,36.92,21.81,0.0,36.92,True
+5,QoS Adaptive,dynamic,URLLC,13.41,13.41,13.41,4.36,0.0,13.41,True
+5,QoS Adaptive,dynamic,mMTC,8.7,8.7,8.7,43.61,0.0,8.7,True
+6,QoS Adaptive,dynamic,eMBB,34.08,34.08,34.08,22.31,0.0,34.08,True
+6,QoS Adaptive,dynamic,URLLC,15.64,15.64,15.64,4.46,0.0,15.64,True
+6,QoS Adaptive,dynamic,mMTC,11.81,11.81,11.81,44.61,0.0,11.81,True
+7,QoS Adaptive,dynamic,eMBB,38.04,38.04,38.04,22.98,0.0,38.04,True
+7,QoS Adaptive,dynamic,URLLC,15.59,15.59,15.59,4.6,0.0,15.59,True
+7,QoS Adaptive,dynamic,mMTC,11.27,11.27,11.27,45.96,0.0,11.27,True
+8,QoS Adaptive,dynamic,eMBB,34.88,34.88,34.88,20.65,0.0,34.88,True
+8,QoS Adaptive,dynamic,URLLC,9.4,10.0,9.4,4.13,0.0,10.0,True
+8,QoS Adaptive,dynamic,mMTC,8.95,8.95,8.95,41.29,0.0,8.95,True
+9,QoS Adaptive,dynamic,eMBB,38.03,38.03,38.03,21.91,0.0,38.03,True
+9,QoS Adaptive,dynamic,URLLC,11.73,11.73,11.73,4.38,0.0,11.73,True
+9,QoS Adaptive,dynamic,mMTC,9.79,9.79,9.79,43.82,0.0,9.79,True
+10,QoS Adaptive,dynamic,eMBB,36.33,36.33,36.33,22.83,0.0,36.33,True
+10,QoS Adaptive,dynamic,URLLC,15.82,15.82,15.82,4.57,0.0,15.82,True
+10,QoS Adaptive,dynamic,mMTC,11.98,11.98,11.98,45.65,0.0,11.98,True
+11,QoS Adaptive,dynamic,eMBB,36.5,36.5,36.5,21.61,0.0,36.5,True
+11,QoS Adaptive,dynamic,URLLC,12.12,12.12,12.12,4.32,0.0,12.12,True
+11,QoS Adaptive,dynamic,mMTC,9.44,9.44,9.44,43.22,0.0,9.44,True
+12,QoS Adaptive,dynamic,eMBB,39.49,39.49,39.49,21.8,0.0,39.49,True
+12,QoS Adaptive,dynamic,URLLC,9.42,10.0,9.42,4.36,0.0,10.0,True
+12,QoS Adaptive,dynamic,mMTC,10.08,10.08,10.08,43.59,0.0,10.08,True
+13,QoS Adaptive,dynamic,eMBB,40.02,40.02,40.02,22.67,0.0,40.02,True
+13,QoS Adaptive,dynamic,URLLC,10.96,10.96,10.96,4.53,0.0,10.96,True
+13,QoS Adaptive,dynamic,mMTC,12.39,12.39,12.39,45.35,0.0,12.39,True
+14,QoS Adaptive,dynamic,eMBB,42.31,42.31,42.31,22.68,0.0,42.31,True
+14,QoS Adaptive,dynamic,URLLC,12.41,12.41,12.41,4.54,0.0,12.41,True
+14,QoS Adaptive,dynamic,mMTC,8.67,8.67,8.67,45.36,0.0,8.67,True
+15,QoS Adaptive,dynamic,eMBB,41.13,41.13,41.13,23.12,0.0,41.13,True
+15,QoS Adaptive,dynamic,URLLC,16.02,16.02,16.02,4.62,0.0,16.02,True
+15,QoS Adaptive,dynamic,mMTC,8.48,8.48,8.48,46.25,0.0,8.48,True
+16,QoS Adaptive,dynamic,eMBB,37.79,37.79,37.79,21.75,0.0,37.79,True
+16,QoS Adaptive,dynamic,URLLC,11.54,11.54,11.54,4.35,0.0,11.54,True
+16,QoS Adaptive,dynamic,mMTC,9.42,9.42,9.42,43.5,0.0,9.42,True
+17,QoS Adaptive,dynamic,eMBB,37.18,37.18,37.18,22.15,0.0,37.18,True
+17,QoS Adaptive,dynamic,URLLC,13.76,13.76,13.76,4.43,0.0,13.76,True
+17,QoS Adaptive,dynamic,mMTC,9.83,9.83,9.83,44.31,0.0,9.83,True
+18,QoS Adaptive,dynamic,eMBB,34.62,34.62,34.62,21.6,0.0,34.62,True
+18,QoS Adaptive,dynamic,URLLC,12.48,12.48,12.48,4.32,0.0,12.48,True
+18,QoS Adaptive,dynamic,mMTC,10.88,10.88,10.88,43.19,0.0,10.88,True
+19,QoS Adaptive,dynamic,eMBB,38.09,38.09,38.09,22.83,0.0,38.09,True
+19,QoS Adaptive,dynamic,URLLC,16.6,16.6,16.6,4.57,0.0,16.6,True
+19,QoS Adaptive,dynamic,mMTC,9.47,9.47,9.47,45.66,0.0,9.47,True
+20,QoS Adaptive,dynamic,eMBB,79.07,60.0,60.0,31.59,24.12,60.0,False
+20,QoS Adaptive,dynamic,URLLC,13.19,13.19,13.19,6.0,0.0,13.19,False
+20,QoS Adaptive,dynamic,mMTC,10.78,10.78,10.78,60.0,0.0,10.78,True
+21,QoS Adaptive,dynamic,eMBB,69.93,60.0,60.0,29.45,14.2,60.0,False
+21,QoS Adaptive,dynamic,URLLC,12.86,12.86,12.86,5.72,0.0,12.86,False
+21,QoS Adaptive,dynamic,mMTC,10.31,10.31,10.31,57.24,0.0,10.31,True
+22,QoS Adaptive,dynamic,eMBB,74.39,60.0,60.0,30.57,19.34,60.0,False
+22,QoS Adaptive,dynamic,URLLC,11.3,11.3,11.3,5.87,0.0,11.3,False
+22,QoS Adaptive,dynamic,mMTC,11.17,11.17,11.17,58.74,0.0,11.17,True
+23,QoS Adaptive,dynamic,eMBB,88.98,60.0,60.0,32.41,32.57,60.0,False
+23,QoS Adaptive,dynamic,URLLC,12.43,12.43,12.43,6.0,0.0,12.43,False
+23,QoS Adaptive,dynamic,mMTC,12.72,12.72,12.72,60.0,0.0,12.72,True
+24,QoS Adaptive,dynamic,eMBB,73.96,60.0,60.0,30.82,18.88,60.0,False
+24,QoS Adaptive,dynamic,URLLC,15.05,15.05,15.05,5.93,0.0,15.05,False
+24,QoS Adaptive,dynamic,mMTC,9.29,9.29,9.29,59.32,0.0,9.29,True
+25,QoS Adaptive,dynamic,eMBB,75.3,60.0,60.0,30.84,20.32,60.0,False
+25,QoS Adaptive,dynamic,URLLC,12.31,12.31,12.31,5.91,0.0,12.31,False
+25,QoS Adaptive,dynamic,mMTC,10.25,10.25,10.25,59.14,0.0,10.25,True
+26,QoS Adaptive,dynamic,eMBB,93.06,60.0,60.0,32.76,35.53,60.0,False
+26,QoS Adaptive,dynamic,URLLC,11.24,11.24,11.24,6.0,0.0,11.24,False
+26,QoS Adaptive,dynamic,mMTC,10.41,10.41,10.41,60.0,0.0,10.41,True
+27,QoS Adaptive,dynamic,eMBB,84.41,60.0,60.0,32.03,28.92,60.0,False
+27,QoS Adaptive,dynamic,URLLC,12.91,12.91,12.91,6.0,0.0,12.91,False
+27,QoS Adaptive,dynamic,mMTC,9.75,9.75,9.75,60.0,0.0,9.75,True
+28,QoS Adaptive,dynamic,eMBB,79.09,60.0,60.0,31.59,24.14,60.0,False
+28,QoS Adaptive,dynamic,URLLC,12.96,12.96,12.96,6.0,0.0,12.96,False
+28,QoS Adaptive,dynamic,mMTC,11.13,11.13,11.13,60.0,0.0,11.13,True
+29,QoS Adaptive,dynamic,eMBB,71.08,60.0,60.0,29.84,15.58,60.0,False
+29,QoS Adaptive,dynamic,URLLC,12.37,12.37,12.37,5.78,0.0,12.37,False
+29,QoS Adaptive,dynamic,mMTC,11.13,11.13,11.13,57.83,0.0,11.13,True
+30,QoS Adaptive,dynamic,eMBB,85.55,60.0,60.0,32.13,29.86,60.0,False
+30,QoS Adaptive,dynamic,URLLC,9.99,10.0,9.99,6.0,0.0,10.0,False
+30,QoS Adaptive,dynamic,mMTC,11.62,11.62,11.62,60.0,0.0,11.62,True
+31,QoS Adaptive,dynamic,eMBB,92.5,60.0,60.0,32.71,35.13,60.0,False
+31,QoS Adaptive,dynamic,URLLC,13.04,13.04,13.04,6.0,0.0,13.04,False
+31,QoS Adaptive,dynamic,mMTC,9.52,9.52,9.52,60.0,0.0,9.52,True
+32,QoS Adaptive,dynamic,eMBB,77.51,60.0,60.0,31.46,22.59,60.0,False
+32,QoS Adaptive,dynamic,URLLC,10.98,10.98,10.98,6.0,0.0,10.98,False
+32,QoS Adaptive,dynamic,mMTC,13.1,13.1,13.1,60.0,0.0,13.1,True
+33,QoS Adaptive,dynamic,eMBB,83.1,60.0,60.0,31.93,27.8,60.0,False
+33,QoS Adaptive,dynamic,URLLC,13.51,13.51,13.51,6.0,0.0,13.51,False
+33,QoS Adaptive,dynamic,mMTC,9.11,9.11,9.11,60.0,0.0,9.11,True
+34,QoS Adaptive,dynamic,eMBB,76.9,60.0,60.0,30.99,21.97,60.0,False
+34,QoS Adaptive,dynamic,URLLC,10.86,10.86,10.86,5.92,0.0,10.86,False
+34,QoS Adaptive,dynamic,mMTC,10.13,10.13,10.13,59.15,0.0,10.13,True
+35,QoS Adaptive,dynamic,eMBB,80.4,60.0,60.0,31.7,25.38,60.0,False
+35,QoS Adaptive,dynamic,URLLC,14.47,14.47,14.47,6.0,0.0,14.47,False
+35,QoS Adaptive,dynamic,mMTC,8.02,8.02,8.02,60.0,0.0,8.02,True
+36,QoS Adaptive,dynamic,eMBB,93.63,60.0,60.0,32.8,35.92,60.0,False
+36,QoS Adaptive,dynamic,URLLC,12.67,12.67,12.67,6.0,0.0,12.67,False
+36,QoS Adaptive,dynamic,mMTC,11.34,11.34,11.34,60.0,0.0,11.34,True
+37,QoS Adaptive,dynamic,eMBB,88.57,60.0,60.0,32.38,32.26,60.0,False
+37,QoS Adaptive,dynamic,URLLC,12.11,12.11,12.11,6.0,0.0,12.11,False
+37,QoS Adaptive,dynamic,mMTC,9.87,9.87,9.87,60.0,0.0,9.87,True
+38,QoS Adaptive,dynamic,eMBB,90.26,60.0,60.0,32.52,33.52,60.0,False
+38,QoS Adaptive,dynamic,URLLC,14.92,14.92,14.92,6.0,0.0,14.92,False
+38,QoS Adaptive,dynamic,mMTC,12.91,12.91,12.91,60.0,0.0,12.91,True
+39,QoS Adaptive,dynamic,eMBB,86.26,60.0,60.0,32.19,30.44,60.0,False
+39,QoS Adaptive,dynamic,URLLC,13.19,13.19,13.19,6.0,0.0,13.19,False
+39,QoS Adaptive,dynamic,mMTC,11.94,11.94,11.94,60.0,0.0,11.94,True
+40,QoS Adaptive,dynamic,eMBB,38.72,38.72,38.72,29.72,0.0,38.72,True
+40,QoS Adaptive,dynamic,URLLC,51.34,50.0,50.0,6.08,2.62,50.0,False
+40,QoS Adaptive,dynamic,mMTC,8.52,8.52,8.52,59.43,0.0,8.52,True
+41,QoS Adaptive,dynamic,eMBB,41.27,41.27,41.27,30.0,0.0,41.27,True
+41,QoS Adaptive,dynamic,URLLC,50.14,50.0,50.0,6.01,0.28,50.0,False
+41,QoS Adaptive,dynamic,mMTC,9.24,8.73,8.73,60.29,5.46,8.73,True
+42,QoS Adaptive,dynamic,eMBB,36.82,36.82,36.82,30.0,0.0,36.82,True
+42,QoS Adaptive,dynamic,URLLC,59.17,50.0,50.0,6.92,15.5,50.0,False
+42,QoS Adaptive,dynamic,mMTC,13.47,13.18,13.18,60.11,2.15,13.18,True
+43,QoS Adaptive,dynamic,eMBB,43.22,43.22,43.22,30.0,0.0,43.22,True
+43,QoS Adaptive,dynamic,URLLC,62.5,50.0,50.0,7.25,20.0,50.0,False
+43,QoS Adaptive,dynamic,mMTC,12.09,6.78,6.78,63.91,43.9,6.78,False
+44,QoS Adaptive,dynamic,eMBB,42.18,42.18,42.18,30.0,0.0,42.18,True
+44,QoS Adaptive,dynamic,URLLC,57.08,50.0,50.0,6.71,12.4,50.0,False
+44,QoS Adaptive,dynamic,mMTC,9.42,7.82,7.82,61.02,17.0,7.82,False
+45,QoS Adaptive,dynamic,eMBB,37.18,37.18,37.18,30.0,0.0,37.18,True
+45,QoS Adaptive,dynamic,URLLC,59.72,50.0,50.0,6.97,16.28,50.0,False
+45,QoS Adaptive,dynamic,mMTC,11.78,11.78,11.78,60.0,0.0,11.78,True
+46,QoS Adaptive,dynamic,eMBB,43.22,43.22,43.22,30.0,0.0,43.22,True
+46,QoS Adaptive,dynamic,URLLC,66.6,50.0,50.0,7.66,24.93,50.0,False
+46,QoS Adaptive,dynamic,mMTC,9.49,6.78,6.78,62.0,28.55,6.78,False
+47,QoS Adaptive,dynamic,eMBB,41.3,41.3,41.3,30.0,0.0,41.3,True
+47,QoS Adaptive,dynamic,URLLC,50.73,50.0,50.0,6.07,1.44,50.0,False
+47,QoS Adaptive,dynamic,mMTC,9.24,8.7,8.7,60.31,5.82,8.7,True
+48,QoS Adaptive,dynamic,eMBB,38.45,38.45,38.45,29.65,0.0,38.45,True
+48,QoS Adaptive,dynamic,URLLC,51.85,50.0,50.0,6.12,3.57,50.0,False
+48,QoS Adaptive,dynamic,mMTC,7.97,7.97,7.97,59.31,0.0,7.97,True
+49,QoS Adaptive,dynamic,eMBB,39.86,39.86,39.86,30.0,0.0,39.86,True
+49,QoS Adaptive,dynamic,URLLC,64.14,50.0,50.0,7.41,22.05,50.0,False
+49,QoS Adaptive,dynamic,mMTC,6.75,6.75,6.75,60.0,0.0,6.75,True
+50,QoS Adaptive,dynamic,eMBB,39.83,39.83,39.83,23.09,0.0,39.83,True
+50,QoS Adaptive,dynamic,URLLC,14.34,14.34,14.34,4.62,0.0,14.34,True
+50,QoS Adaptive,dynamic,mMTC,11.28,11.28,11.28,46.18,0.0,11.28,True
+51,QoS Adaptive,dynamic,eMBB,40.88,40.88,40.88,22.72,0.0,40.88,True
+51,QoS Adaptive,dynamic,URLLC,14.07,14.07,14.07,4.54,0.0,14.07,True
+51,QoS Adaptive,dynamic,mMTC,8.62,8.62,8.62,45.43,0.0,8.62,True
+52,QoS Adaptive,dynamic,eMBB,43.93,43.93,43.93,23.76,0.0,43.93,True
+52,QoS Adaptive,dynamic,URLLC,12.14,12.14,12.14,4.75,0.0,12.14,True
+52,QoS Adaptive,dynamic,mMTC,12.73,12.73,12.73,47.52,0.0,12.73,True
+53,QoS Adaptive,dynamic,eMBB,34.77,34.77,34.77,21.53,0.0,34.77,True
+53,QoS Adaptive,dynamic,URLLC,14.43,14.43,14.43,4.31,0.0,14.43,True
+53,QoS Adaptive,dynamic,mMTC,8.43,8.43,8.43,43.05,0.0,8.43,True
+54,QoS Adaptive,dynamic,eMBB,40.66,40.66,40.66,23.48,0.0,40.66,True
+54,QoS Adaptive,dynamic,URLLC,15.26,15.26,15.26,4.7,0.0,15.26,True
+54,QoS Adaptive,dynamic,mMTC,11.49,11.49,11.49,46.97,0.0,11.49,True
+55,QoS Adaptive,dynamic,eMBB,42.36,42.36,42.36,23.53,0.0,42.36,True
+55,QoS Adaptive,dynamic,URLLC,16.23,16.23,16.23,4.71,0.0,16.23,True
+55,QoS Adaptive,dynamic,mMTC,9.06,9.06,9.06,47.06,0.0,9.06,True
+56,QoS Adaptive,dynamic,eMBB,39.96,39.96,39.96,23.04,0.0,39.96,True
+56,QoS Adaptive,dynamic,URLLC,14.21,14.21,14.21,4.61,0.0,14.21,True
+56,QoS Adaptive,dynamic,mMTC,11.03,11.03,11.03,46.08,0.0,11.03,True
+57,QoS Adaptive,dynamic,eMBB,44.29,44.29,44.29,23.7,0.0,44.29,True
+57,QoS Adaptive,dynamic,URLLC,13.21,13.21,13.21,4.74,0.0,13.21,True
+57,QoS Adaptive,dynamic,mMTC,11.0,11.0,11.0,47.4,0.0,11.0,True
+58,QoS Adaptive,dynamic,eMBB,38.62,38.62,38.62,22.32,0.0,38.62,True
+58,QoS Adaptive,dynamic,URLLC,9.44,10.0,9.44,4.46,0.0,10.0,True
+58,QoS Adaptive,dynamic,mMTC,13.53,13.53,13.53,44.64,0.0,13.53,True
+59,QoS Adaptive,dynamic,eMBB,40.55,40.55,40.55,22.66,0.0,40.55,True
+59,QoS Adaptive,dynamic,URLLC,12.62,12.62,12.62,4.53,0.0,12.62,True
+59,QoS Adaptive,dynamic,mMTC,10.11,10.11,10.11,45.31,0.0,10.11,True
