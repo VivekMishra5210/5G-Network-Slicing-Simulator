@@ -1,0 +1,86 @@
+request_id,tenant_id,slice_type,arrival_time_ms,payload_bits,compute_demand,deadline_ms,route_candidate,status,status_reason,predicted_delay_ms,actual_e2e_delay_ms,completion_time_ms,deadline_met
+req_0003,tenant_1,URLLC,9.09,4469.9,4.45,5.02,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+req_0002,tenant_2,eMBB,16.69,68322.9,5.21,89.1,edge,COMPLETED,,86.32,49.77,66.45,True
+req_0001,tenant_1,eMBB,29.93,57833.3,6.0,73.78,edge,COMPLETED,,65.23,65.66,95.6,True
+req_0004,tenant_2,eMBB,52.33,54654.5,9.56,83.56,edge,COMPLETED,,74.72,92.51,144.84,False
+req_0006,tenant_2,mMTC,78.16,804.6,0.65,161.05,edge,COMPLETED,,3.25,67.28,145.44,True
+req_0005,tenant_1,mMTC,80.38,950.5,0.52,176.53,edge,COMPLETED,,3.35,65.74,146.12,True
+req_0011,tenant_1,mMTC,107.05,665.3,0.52,145.4,edge,COMPLETED,,2.92,39.6,146.65,True
+req_0009,tenant_1,mMTC,109.8,1461.2,1.77,164.84,edge,COMPLETED,,5.36,39.01,148.81,True
+req_0008,tenant_2,URLLC,110.4,2739.4,5.88,7.33,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+req_0012,tenant_2,mMTC,119.74,505.5,1.72,162.41,edge,COMPLETED,,3.88,30.81,150.56,True
+req_0007,tenant_1,eMBB,124.76,46934.6,8.91,65.47,edge,COMPLETED,,65.07,68.65,193.41,False
+req_0010,tenant_2,mMTC,126.98,856.8,0.92,152.56,edge,COMPLETED,,3.61,67.06,194.04,True
+req_0014,tenant_1,eMBB,154.77,52439.3,8.25,81.89,edge,COMPLETED,,79.57,79.83,234.61,True
+req_0015,tenant_2,URLLC,155.98,5395.7,4.89,5.71,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+req_0016,tenant_1,URLLC,162.8,4090.9,3.71,5.08,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+req_0013,tenant_1,eMBB,167.92,76598.4,13.5,73.48,edge,COMPLETED,,72.35,164.35,332.28,False
+req_0017,tenant_2,URLLC,225.43,2557.3,4.42,6.62,edge,COMPLETED,,6.61,110.9,336.33,False
+req_0025,tenant_2,mMTC,261.98,1030.9,1.17,153.17,edge,COMPLETED,,4.12,76.26,338.23,True
+req_0022,tenant_1,URLLC,262.21,3292.8,4.08,7.11,edge,COMPLETED,,7.04,80.56,342.76,False
+req_0018,tenant_1,eMBB,264.78,74858.4,13.04,65.6,edge,COMPLETED,,63.09,172.98,437.76,False
+req_0023,tenant_1,mMTC,274.86,648.1,2.0,136.01,edge,COMPLETED,,4.37,165.01,439.87,False
+req_0021,tenant_1,eMBB,293.04,46586.2,10.34,74.54,edge,COMPLETED,,73.86,193.4,486.44,False
+req_0019,tenant_1,eMBB,294.63,52973.8,6.22,70.69,edge,COMPLETED,,69.42,224.37,519.0,False
+req_0020,tenant_1,eMBB,295.34,49117.4,9.27,84.54,edge,COMPLETED,,84.35,270.59,565.93,False
+req_0024,tenant_2,mMTC,298.83,551.5,0.92,174.5,edge,COMPLETED,,3.15,268.23,567.06,False
+req_0027,tenant_1,URLLC,304.51,2602.9,4.03,7.09,edge,COMPLETED,,6.99,267.33,571.84,False
+req_0026,tenant_1,eMBB,318.48,69128.7,8.68,78.97,edge,COMPLETED,,73.45,310.19,628.67,False
+req_0029,tenant_2,mMTC,334.55,1017.8,1.76,160.54,edge,COMPLETED,,4.68,294.83,629.38,False
+req_0028,tenant_1,mMTC,335.56,726.5,1.47,130.46,edge,COMPLETED,,3.96,295.42,630.98,False
+req_0031,tenant_2,URLLC,362.09,5861.7,4.23,7.65,edge,COMPLETED,,7.59,273.9,636.0,False
+req_0030,tenant_2,eMBB,377.07,50317.7,11.6,84.52,edge,COMPLETED,,80.09,319.93,697.0,False
+req_0035,tenant_1,mMTC,411.86,678.8,1.05,164.65,edge,COMPLETED,,3.47,285.87,697.73,False
+req_0034,tenant_2,URLLC,414.2,4194.9,4.77,6.96,edge,COMPLETED,,6.95,288.73,702.92,False
+req_0033,tenant_1,URLLC,430.32,3489.1,5.76,7.92,edge,COMPLETED,,7.91,278.85,709.17,False
+req_0032,tenant_2,URLLC,444.39,2336.6,2.65,7.7,edge,COMPLETED,,7.55,268.85,713.24,False
+req_0036,tenant_1,eMBB,477.13,54708.6,7.65,67.32,edge,COMPLETED,,59.2,277.94,755.06,False
+req_0037,tenant_2,URLLC,481.56,3400.3,4.58,7.01,edge,COMPLETED,,7.0,276.69,758.25,False
+req_0038,tenant_2,URLLC,493.21,4889.8,3.12,5.07,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+req_0039,tenant_1,mMTC,497.02,779.6,1.83,164.86,edge,COMPLETED,,4.39,263.6,760.62,False
+req_0042,tenant_1,URLLC,510.45,5960.2,2.56,6.55,edge,COMPLETED,,6.51,253.7,764.15,False
+req_0044,tenant_2,mMTC,520.99,1367.1,1.87,150.68,edge,COMPLETED,,5.32,245.36,766.35,False
+req_0040,tenant_2,eMBB,528.61,74120.4,7.94,71.55,edge,COMPLETED,,71.11,296.87,825.48,False
+req_0041,tenant_2,eMBB,542.56,59411.2,8.73,71.84,edge,COMPLETED,,69.54,332.16,874.71,False
+req_0043,tenant_1,URLLC,543.87,5394.7,2.55,7.13,edge,COMPLETED,,7.0,331.94,875.81,False
+req_0046,tenant_2,eMBB,578.94,63131.2,5.36,73.97,edge,COMPLETED,,69.89,331.21,910.16,False
+req_0047,tenant_2,URLLC,579.54,3001.0,2.16,5.91,edge,COMPLETED,,5.81,332.98,912.52,False
+req_0045,tenant_2,eMBB,585.1,42030.7,13.87,60.83,edge,COMPLETED,,57.3,386.15,971.24,False
+req_0048,tenant_2,mMTC,591.39,715.8,1.43,125.12,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0049,tenant_2,URLLC,631.87,2531.0,5.88,7.14,edge,COMPLETED,,6.23,342.06,973.93,False
+req_0051,tenant_1,URLLC,658.66,3769.4,2.96,5.28,edge,COMPLETED,,4.63,317.88,976.54,False
+req_0050,tenant_2,eMBB,687.2,41014.0,14.63,85.08,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0057,tenant_1,mMTC,703.53,1444.3,1.8,158.18,edge,COMPLETED,,5.37,275.62,979.15,False
+req_0055,tenant_2,URLLC,708.66,4599.1,2.19,7.85,edge,COMPLETED,,7.81,273.99,982.65,False
+req_0054,tenant_2,eMBB,715.57,68146.3,9.74,62.94,edge,COMPLETED,,62.25,329.03,1044.6,False
+req_0052,tenant_1,eMBB,721.78,56784.0,7.48,70.68,edge,COMPLETED,,65.66,363.6,1085.38,False
+req_0053,tenant_1,eMBB,737.89,53675.2,5.92,62.82,edge,COMPLETED,,60.99,378.54,1116.44,False
+req_0056,tenant_2,mMTC,746.67,1356.5,1.49,129.78,edge,COMPLETED,,4.92,370.64,1117.31,False
+req_0060,tenant_2,eMBB,751.95,67320.3,5.71,69.57,edge,COMPLETED,,68.82,404.3,1156.24,False
+req_0062,tenant_1,mMTC,770.9,782.0,0.77,165.04,edge,COMPLETED,,3.34,385.94,1156.84,False
+req_0058,tenant_1,eMBB,790.56,77658.6,8.86,88.84,edge,COMPLETED,,81.45,431.92,1222.48,False
+req_0061,tenant_1,URLLC,790.72,3984.1,4.77,6.05,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+req_0059,tenant_2,eMBB,795.27,50958.4,7.15,71.32,edge,COMPLETED,,68.0,464.55,1259.81,False
+req_0068,tenant_1,mMTC,805.67,994.4,0.59,152.97,edge,COMPLETED,,3.48,454.84,1260.51,False
+req_0067,tenant_1,mMTC,816.43,712.7,1.92,166.88,edge,COMPLETED,,4.39,446.26,1262.69,False
+req_0069,tenant_1,mMTC,822.08,1045.9,1.56,178.12,edge,COMPLETED,,4.53,442.84,1264.91,False
+req_0066,tenant_2,mMTC,824.13,1131.8,1.17,137.59,edge,COMPLETED,,4.27,442.5,1266.63,False
+req_0065,tenant_2,eMBB,825.26,55584.7,7.98,63.0,edge,COMPLETED,,60.33,485.71,1310.97,False
+req_0064,tenant_1,eMBB,833.99,70181.7,6.03,87.08,edge,COMPLETED,,83.46,518.73,1352.72,False
+req_0063,tenant_2,eMBB,838.82,74684.7,10.62,67.16,edge,COMPLETED,,64.3,587.18,1426.0,False
+req_0073,tenant_1,eMBB,854.18,55119.5,12.05,67.46,edge,COMPLETED,,63.98,636.42,1490.59,False
+req_0071,tenant_1,eMBB,854.24,63252.2,13.63,86.41,edge,COMPLETED,,78.28,719.85,1574.09,False
+req_0070,tenant_1,eMBB,861.13,72874.4,12.06,62.44,edge,COMPLETED,,60.83,799.99,1661.12,False
+req_0072,tenant_1,eMBB,861.83,79440.0,12.53,71.29,edge,COMPLETED,,69.54,892.21,1754.04,False
+req_0074,tenant_2,mMTC,870.26,556.3,0.68,127.05,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0079,tenant_2,URLLC,902.27,5834.8,2.23,6.18,edge,COMPLETED,,6.17,853.37,1755.64,False
+req_0078,tenant_1,URLLC,914.72,4510.2,4.34,7.7,edge,COMPLETED,,7.67,845.67,1760.39,False
+req_0076,tenant_2,eMBB,921.82,40486.2,14.7,61.29,edge,COMPLETED,,56.58,900.22,1822.04,False
+req_0077,tenant_2,URLLC,927.69,2301.7,2.66,5.65,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0075,tenant_1,eMBB,948.11,59108.6,5.83,75.85,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0082,tenant_2,URLLC,953.81,5799.2,4.9,6.84,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0081,tenant_2,URLLC,965.48,4411.1,3.08,5.4,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0083,tenant_2,URLLC,970.91,5506.6,4.21,5.49,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+req_0080,tenant_2,eMBB,982.34,54134.1,10.84,62.33,edge,COMPLETED,,61.86,896.42,1878.76,False
+req_0085,tenant_1,mMTC,992.11,563.5,0.56,128.03,edge,COMPLETED,,2.8,887.14,1879.24,False
+req_0084,tenant_1,mMTC,999.26,1094.1,1.07,178.19,edge,COMPLETED,,4.11,881.14,1880.4,False

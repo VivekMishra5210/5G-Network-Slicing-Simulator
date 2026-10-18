@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5G Network Slicing Simulator</title>
+    <title>5G Network Slicing Simulator (with MCRA)</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -13,6 +13,7 @@
             --urllc-color: #F44336;
             --mmtc-color: #4CAF50;
             --accent-glow: #00d4ff;
+            --mcra-purple: #9c27b0;
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
@@ -30,7 +31,7 @@
             min-height: 100vh;
             padding: 20px;
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 340px 1fr;
             gap: 20px;
         }
 
@@ -52,20 +53,34 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2.3em;
             text-shadow: 0 0 10px var(--accent-glow);
             margin-bottom: 5px;
         }
 
         h2 {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #aaa;
+        }
+
+        .badge-mcra {
+            display: inline-block;
+            background: rgba(156, 39, 176, 0.3);
+            border: 1px solid var(--mcra-purple);
+            color: #e1bee7;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 8px;
+            vertical-align: middle;
         }
 
         .control-panel {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 14px;
+            max-height: 85vh;
+            overflow-y: auto;
         }
 
         .control-group {
@@ -75,7 +90,7 @@
         }
 
         label {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #ccc;
         }
 
@@ -97,56 +112,50 @@
             background: rgba(0, 212, 255, 0.2);
             border: 1px solid var(--accent-glow);
             color: var(--accent-glow);
-            padding: 15px;
-            font-size: 1.2em;
+            padding: 14px;
+            font-size: 1.05em;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s;
             text-transform: uppercase;
-            margin-top: 20px;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+            margin-top: 5px;
         }
 
         .run-btn:hover {
             background: var(--accent-glow);
             color: #000;
-            box-shadow: 0 0 25px var(--accent-glow);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .run-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-            pointer-events: none;
         }
 
         .main-content {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            overflow: hidden;
         }
 
         .status-cards {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
         }
 
         .status-card {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            position: relative;
-            overflow: hidden;
+            gap: 8px;
+            border-top: 4px solid #fff;
         }
 
-        .status-card.embb { border-top: 4px solid var(--embb-color); }
-        .status-card.urllc { border-top: 4px solid var(--urllc-color); }
-        .status-card.mmtc { border-top: 4px solid var(--mmtc-color); }
-
         .card-header {
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: bold;
         }
 
@@ -157,13 +166,12 @@
         .metric {
             display: flex;
             justify-content: space-between;
-            font-size: 1.1em;
+            font-size: 1.0em;
             border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         .charts-section {
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
@@ -183,17 +191,18 @@
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s;
+            font-size: 0.9em;
         }
 
         .tab-btn.active {
             background: var(--accent-glow);
             color: #000;
+            font-weight: bold;
         }
 
         .chart-container {
-            flex-grow: 1;
             position: relative;
-            min-height: 400px;
+            min-height: 380px;
             background: rgba(0,0,0,0.2);
             border-radius: 8px;
             padding: 10px;
@@ -201,13 +210,13 @@
 
         .spinner {
             display: none;
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.1);
             border-top-color: var(--accent-glow);
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 20px auto;
+            margin: 15px auto;
         }
 
         @keyframes spin { 100% { transform: rotate(360deg); } }
@@ -215,108 +224,278 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
         }
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         th { color: var(--accent-glow); }
 
-        #comparison-container {
+        /* MCRA Specialized Sections */
+        #mcra-specific-controls {
             display: none;
+            background: rgba(156, 39, 176, 0.1);
+            border: 1px dashed rgba(156, 39, 176, 0.4);
+            border-radius: 8px;
+            padding: 12px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #mcra-topology-panel {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .topo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .topo-node {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--glass-border);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .topo-node h4 {
+            color: var(--accent-glow);
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: rgba(255,255,255,0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-glow);
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        #mcra-inspector-panel, #mcra-events-panel {
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .log-box {
+            background: rgba(0,0,0,0.4);
+            border-radius: 6px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.85em;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        #reference-footer {
+            grid-column: 1 / -1;
+            font-size: 0.8em;
+            color: #888;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
     <header class="glass-panel">
-        <h1>5G Network Slicing Simulator</h1>
-        <h2>Adaptive QoS-Aware Resource Allocation</h2>
+        <h1>5G Network Slicing Simulator <span class="badge-mcra">MCRA Ready</span></h1>
+        <h2>Adaptive QoS-Aware Resource Allocation & Multi-Tenant MCRA</h2>
     </header>
 
     <div class="control-panel glass-panel">
         <div class="control-group">
-            <label>Total Bandwidth (Mbps)</label>
-            <input type="range" id="bandwidth" min="50" max="500" value="100" oninput="this.nextElementSibling.value = this.value">
-            <output>100</output>
-        </div>
-        <div class="control-group">
-            <label>Duration (s)</label>
-            <input type="range" id="duration" min="10" max="120" value="60" oninput="this.nextElementSibling.value = this.value">
-            <output>60</output>
-        </div>
-        
-        <div class="control-group"><label>eMBB Users</label><input type="number" id="embb-users" value="20"></div>
-        <div class="control-group"><label>URLLC Users</label><input type="number" id="urllc-users" value="10"></div>
-        <div class="control-group"><label>mMTC Users</label><input type="number" id="mmtc-users" value="200"></div>
-        
-        <div class="control-group">
-            <label>Scenario</label>
-            <select id="scenario">
-                <option value="Normal">Normal</option>
-                <option value="Heavy eMBB">Heavy eMBB</option>
-                <option value="URLLC Emergency">URLLC Emergency</option>
-                <option value="Full Congestion">Full Congestion</option>
-                <option value="Dynamic">Dynamic</option>
-            </select>
-        </div>
-        <div class="control-group">
-            <label>Algorithm</label>
-            <select id="algorithm">
-                <option value="All">All (Compare)</option>
-                <option value="Static">Static</option>
+            <label>Allocation Strategy</label>
+            <select id="algorithm" onchange="toggleAlgorithmMode()">
+                <option value="All">All (Benchmark Legacy)</option>
+                <option value="Static">Static Allocation</option>
                 <option value="Round Robin">Round Robin</option>
                 <option value="QoS Adaptive">QoS Adaptive</option>
+                <option value="MCRA" selected>MCRA (Research Two-Tier)</option>
             </select>
         </div>
-        <div class="control-group"><label>Random Seed</label><input type="number" id="seed" value="42"></div>
 
-        <button class="run-btn" id="run-btn" onclick="runSimulation()">Run Simulation</button>
+        <!-- Legacy Controls -->
+        <div id="legacy-controls" style="display: none; flex-direction: column; gap: 12px;">
+            <div class="control-group">
+                <label>Total Bandwidth (Mbps)</label>
+                <input type="range" id="bandwidth" min="50" max="500" value="100" oninput="this.nextElementSibling.value = this.value">
+                <output>100</output>
+            </div>
+            <div class="control-group">
+                <label>Duration (s)</label>
+                <input type="range" id="duration" min="10" max="120" value="60" oninput="this.nextElementSibling.value = this.value">
+                <output>60</output>
+            </div>
+            <div class="control-group">
+                <label>Scenario</label>
+                <select id="scenario">
+                    <option value="Normal">Normal</option>
+                    <option value="Heavy eMBB">Heavy eMBB</option>
+                    <option value="URLLC Emergency">URLLC Emergency</option>
+                    <option value="Full Congestion">Full Congestion</option>
+                    <option value="Dynamic">Dynamic</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- MCRA Specific Controls -->
+        <div id="mcra-specific-controls" style="display: flex;">
+            <div class="control-group">
+                <label>MCRA Topology Mode</label>
+                <select id="mcra-topology">
+                    <option value="parallel_hybrid">Parallel Hybrid (Edge + Cloud)</option>
+                    <option value="edge_only">Edge-Only</option>
+                    <option value="cloud_only">Cloud-Only</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Traffic Scenario</label>
+                <select id="mcra-scenario">
+                    <option value="normal_mix">Normal Mix</option>
+                    <option value="trace_playback">5G NR Trace Playback (Real Dataset)</option>
+                    <option value="ns3_trace">NS-3 ASCII Trace Playback</option>
+                    <option value="embb_surge">eMBB Surge (Heavy Video)</option>
+                    <option value="urllc_emergency">URLLC Emergency (Critical)</option>
+                    <option value="mmtc_surge">mMTC Surge (IoT Burst)</option>
+                    <option value="edge_overload">Edge Overload</option>
+                    <option value="backhaul_congestion">Backhaul Congestion</option>
+                    <option value="mixed_peak">Mixed Peak</option>
+                    <option value="dynamic_day">Dynamic Day</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Simulation Duration (ms)</label>
+                <input type="number" id="mcra-duration" value="1000" min="200" max="10000">
+            </div>
+            <div class="control-group">
+                <label>Cost Base (&delta; &gt; 1.0)</label>
+                <input type="number" id="mcra-cost-base" value="2.0" step="0.1" min="1.1">
+            </div>
+            <div class="control-group">
+                <label>Access Link Capacity (Mbps)</label>
+                <input type="number" id="mcra-access-cap" value="100">
+            </div>
+            <div class="control-group">
+                <label>Backhaul Capacity (Mbps)</label>
+                <input type="number" id="mcra-backhaul-cap" value="50">
+            </div>
+            <div class="control-group">
+                <label>Edge Compute Capacity (Units/ms)</label>
+                <input type="number" id="mcra-edge-cap" value="30">
+            </div>
+            <div class="control-group">
+                <label>Cloud Compute Capacity (Units/ms)</label>
+                <input type="number" id="mcra-cloud-cap" value="150">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>Random Seed</label>
+            <input type="number" id="seed" value="42">
+        </div>
+
+        <button class="run-btn" id="run-btn" onclick="executeSimulation()">Run Simulation</button>
         <div class="spinner" id="spinner"></div>
     </div>
 
     <div class="main-content">
+        <!-- Live Slice Performance Cards -->
         <div class="status-cards" id="status-cards">
-            <!-- Populated by JS -->
             <div class="status-card glass-panel embb">
-                <div class="card-header">eMBB</div>
-                <div class="metric"><span>Throughput:</span> <span id="embb-thr">--</span></div>
-                <div class="metric"><span>Latency:</span> <span id="embb-lat">--</span></div>
-                <div class="metric"><span>Packet Loss:</span> <span id="embb-loss">--</span></div>
-                <div class="metric"><span>QoS Satisfied:</span> <span id="embb-qos">--</span></div>
+                <div class="card-header">eMBB (High Throughput)</div>
+                <div class="metric"><span>Delivered:</span> <span id="embb-thr">--</span></div>
+                <div class="metric"><span>Mean Latency:</span> <span id="embb-lat">--</span></div>
+                <div class="metric"><span>Packet Loss / Drop:</span> <span id="embb-loss">--</span></div>
+                <div class="metric"><span>QoS Satisfaction:</span> <span id="embb-qos">--</span></div>
             </div>
             <div class="status-card glass-panel urllc">
-                <div class="card-header">URLLC</div>
-                <div class="metric"><span>Throughput:</span> <span id="urllc-thr">--</span></div>
-                <div class="metric"><span>Latency:</span> <span id="urllc-lat">--</span></div>
-                <div class="metric"><span>Packet Loss:</span> <span id="urllc-loss">--</span></div>
-                <div class="metric"><span>QoS Satisfied:</span> <span id="urllc-qos">--</span></div>
+                <div class="card-header">URLLC (Mission-Critical)</div>
+                <div class="metric"><span>Delivered:</span> <span id="urllc-thr">--</span></div>
+                <div class="metric"><span>Mean Latency:</span> <span id="urllc-lat">--</span></div>
+                <div class="metric"><span>Packet Loss / Drop:</span> <span id="urllc-loss">--</span></div>
+                <div class="metric"><span>QoS Satisfaction:</span> <span id="urllc-qos">--</span></div>
             </div>
             <div class="status-card glass-panel mmtc">
-                <div class="card-header">mMTC</div>
-                <div class="metric"><span>Throughput:</span> <span id="mmtc-thr">--</span></div>
-                <div class="metric"><span>Latency:</span> <span id="mmtc-lat">--</span></div>
-                <div class="metric"><span>Packet Loss:</span> <span id="mmtc-loss">--</span></div>
-                <div class="metric"><span>QoS Satisfied:</span> <span id="mmtc-qos">--</span></div>
+                <div class="card-header">mMTC (Massive IoT)</div>
+                <div class="metric"><span>Delivered:</span> <span id="mmtc-thr">--</span></div>
+                <div class="metric"><span>Mean Latency:</span> <span id="mmtc-lat">--</span></div>
+                <div class="metric"><span>Packet Loss / Drop:</span> <span id="mmtc-loss">--</span></div>
+                <div class="metric"><span>QoS Satisfaction:</span> <span id="mmtc-qos">--</span></div>
             </div>
         </div>
 
+        <!-- MCRA Topology & Live Utilization View -->
+        <div id="mcra-topology-panel" class="glass-panel" style="display: block;">
+            <h3>Two-Tier 5G Network Topology & Time-Weighted Resource Utilization</h3>
+            <div class="topo-grid" id="topo-nodes-grid">
+                <div class="topo-node">
+                    <h4>Radio Access Link</h4>
+                    <span id="util-access">0.0%</span>
+                    <div class="progress-bar"><div id="fill-access" class="progress-fill"></div></div>
+                </div>
+                <div class="topo-node">
+                    <h4>Edge MEC Node</h4>
+                    <span id="util-edge">0.0%</span>
+                    <div class="progress-bar"><div id="fill-edge" class="progress-fill"></div></div>
+                </div>
+                <div class="topo-node">
+                    <h4>Core Backhaul Link</h4>
+                    <span id="util-backhaul">0.0%</span>
+                    <div class="progress-bar"><div id="fill-backhaul" class="progress-fill"></div></div>
+                </div>
+                <div class="topo-node">
+                    <h4>Central Cloud Node</h4>
+                    <span id="util-cloud">0.0%</span>
+                    <div class="progress-bar"><div id="fill-cloud" class="progress-fill"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
         <div class="charts-section glass-panel">
             <div class="chart-tabs">
-                <button class="tab-btn active" onclick="showChart('throughput')">Throughput</button>
-                <button class="tab-btn" onclick="showChart('latency')">Latency</button>
-                <button class="tab-btn" onclick="showChart('allocation')">Allocation</button>
-                <button class="tab-btn" onclick="showChart('qos')">QoS Satisfaction</button>
+                <button class="tab-btn active" id="tab-throughput" onclick="switchChartTab('throughput')">Throughput</button>
+                <button class="tab-btn" id="tab-latency" onclick="switchChartTab('latency')">Latency</button>
+                <button class="tab-btn" id="tab-qos" onclick="switchChartTab('qos')">QoS Satisfaction</button>
+                <button class="tab-btn" id="tab-util" onclick="switchChartTab('utilization')">Resource Utilization</button>
             </div>
             <div class="chart-container">
                 <canvas id="mainChart"></canvas>
             </div>
         </div>
 
-        <div id="comparison-container" class="glass-panel">
-            <h3>Algorithm Comparison</h3>
+        <!-- MCRA Decision Inspector -->
+        <div id="mcra-inspector-panel" class="glass-panel">
+            <h3>MCRA Lowest-Marginal-Cost Decision Inspector (Sample Admissions)</h3>
+            <div class="log-box" id="decision-log-box">Run MCRA simulation to inspect marginal cost iterations...</div>
+        </div>
+
+        <!-- Event Replay Timeline -->
+        <div id="mcra-events-panel" class="glass-panel">
+            <h3>Discrete-Event Journey Timeline</h3>
+            <div class="log-box" id="event-log-box">Event traces will appear here...</div>
+        </div>
+
+        <!-- Legacy Algorithm Comparison Table -->
+        <div id="comparison-container" class="glass-panel" style="display: none;">
+            <h3>Algorithm Benchmark Comparison</h3>
             <table id="comp-table">
                 <thead>
                     <tr>
@@ -333,77 +512,192 @@
         </div>
     </div>
 
+    <footer id="reference-footer">
+        Reference: Jia-You Lin et al., "Dynamic Resource Allocation for Network Slicing with Multi-Tenants in 5G Two-Tier Networks," Sensors, 23(10), 4698 (2023). DOI: 10.3390/s23104698.
+    </footer>
+
     <script>
         let mainChart = null;
-        let simData = null;
+        let lastSimData = null;
+        let isMCRAMode = true;
+        let currentChartTab = 'throughput';
         const colors = { eMBB: '#2196F3', URLLC: '#F44336', mMTC: '#4CAF50' };
-        let currentChartType = 'throughput';
 
-        async function runSimulation() {
+        function toggleAlgorithmMode() {
+            const algo = document.getElementById('algorithm').value;
+            const mcraControls = document.getElementById('mcra-specific-controls');
+            const legacyControls = document.getElementById('legacy-controls');
+            const topoPanel = document.getElementById('mcra-topology-panel');
+            const inspectorPanel = document.getElementById('mcra-inspector-panel');
+            const eventsPanel = document.getElementById('mcra-events-panel');
+            const compPanel = document.getElementById('comparison-container');
+
+            if (algo === 'MCRA') {
+                isMCRAMode = true;
+                mcraControls.style.display = 'flex';
+                legacyControls.style.display = 'none';
+                topoPanel.style.display = 'block';
+                inspectorPanel.style.display = 'block';
+                eventsPanel.style.display = 'block';
+                compPanel.style.display = 'none';
+            } else {
+                isMCRAMode = false;
+                mcraControls.style.display = 'none';
+                legacyControls.style.display = 'flex';
+                topoPanel.style.display = 'none';
+                inspectorPanel.style.display = 'none';
+                eventsPanel.style.display = 'none';
+                if (algo === 'All') compPanel.style.display = 'block';
+            }
+        }
+
+        async function executeSimulation() {
             const btn = document.getElementById('run-btn');
             const spinner = document.getElementById('spinner');
             btn.disabled = true;
             spinner.style.display = 'block';
 
-            const payload = {
-                bandwidth: document.getElementById('bandwidth').value,
-                duration: document.getElementById('duration').value,
-                scenario: document.getElementById('scenario').value,
-                algorithm: document.getElementById('algorithm').value,
-                seed: document.getElementById('seed').value,
-                embb_users: document.getElementById('embb-users').value,
-                urllc_users: document.getElementById('urllc-users').value,
-                mmtc_users: document.getElementById('mmtc-users').value
-            };
+            const algo = document.getElementById('algorithm').value;
 
             try {
-                const res = await fetch('/api/simulate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                simData = await res.json();
-                updateDashboard();
+                if (algo === 'MCRA') {
+                    const payload = {
+                        topology_mode: document.getElementById('mcra-topology').value,
+                        scenario: document.getElementById('mcra-scenario').value,
+                        duration_ms: parseFloat(document.getElementById('mcra-duration').value),
+                        seed: parseInt(document.getElementById('seed').value),
+                        cost_base: parseFloat(document.getElementById('mcra-cost-base').value),
+                        access_link_capacity_mbps: parseFloat(document.getElementById('mcra-access-cap').value),
+                        backhaul_capacity_mbps: parseFloat(document.getElementById('mcra-backhaul-cap').value),
+                        edge_compute_capacity: parseFloat(document.getElementById('mcra-edge-cap').value),
+                        cloud_compute_capacity: parseFloat(document.getElementById('mcra-cloud-cap').value),
+                    };
+
+                    const res = await fetch('/api/mcra/simulate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    lastSimData = await res.json();
+                    renderMCRAResults(lastSimData);
+                } else {
+                    const payload = {
+                        bandwidth: document.getElementById('bandwidth').value,
+                        duration: document.getElementById('duration').value,
+                        scenario: document.getElementById('scenario').value,
+                        algorithm: algo,
+                        seed: document.getElementById('seed').value,
+                    };
+
+                    const res = await fetch('/api/simulate', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    lastSimData = await res.json();
+                    renderLegacyResults(lastSimData, algo);
+                }
             } catch (err) {
                 console.error(err);
-                alert("Simulation failed.");
+                alert("Simulation failed: " + err.message);
             } finally {
                 btn.disabled = false;
                 spinner.style.display = 'none';
             }
         }
 
-        function updateDashboard() {
-            if (!simData) return;
-            
-            // Update summary cards
-            const s = simData.summary;
+        function renderMCRAResults(data) {
+            if (!data || !data.summary) return;
+
+            // Update Status Cards
+            const ps = data.per_slice;
+            if (ps) {
+                ['eMBB', 'URLLC', 'mMTC'].forEach(slice => {
+                    const id = slice.toLowerCase();
+                    if (ps[slice]) {
+                        document.getElementById(`${id}-thr`).innerText = (data.summary.delivered_throughput_mbps).toFixed(2) + ' Mbps';
+                        document.getElementById(`${id}-lat`).innerText = (ps[slice].mean_e2e_delay_ms).toFixed(2) + ' ms';
+                        document.getElementById(`${id}-loss`).innerText = (ps[slice].blocking_probability * 100).toFixed(2) + ' % (Block)';
+                        
+                        const qos = ps[slice].qos_satisfaction_pct;
+                        const el = document.getElementById(`${id}-qos`);
+                        el.innerText = qos.toFixed(1) + '%';
+                        el.style.color = qos >= 80 ? '#4CAF50' : qos >= 50 ? '#FFC107' : '#F44336';
+                    }
+                });
+            }
+
+            // Update Topology Utilization Bars
+            const ru = data.resource_utilization || {};
+            const access = ru.link_access || 0;
+            const edge = ru.edge_compute || 0;
+            const backhaul = ru.link_backhaul || 0;
+            const cloud = ru.cloud_compute || 0;
+
+            document.getElementById('util-access').innerText = access.toFixed(1) + '%';
+            document.getElementById('fill-access').style.width = access + '%';
+
+            document.getElementById('util-edge').innerText = edge.toFixed(1) + '%';
+            document.getElementById('fill-edge').style.width = edge + '%';
+
+            document.getElementById('util-backhaul').innerText = backhaul.toFixed(1) + '%';
+            document.getElementById('fill-backhaul').style.width = backhaul + '%';
+
+            document.getElementById('util-cloud').innerText = cloud.toFixed(1) + '%';
+            document.getElementById('fill-cloud').style.width = cloud + '%';
+
+            // Populate MCRA Decisions Log
+            const decBox = document.getElementById('decision-log-box');
+            if (data.mcra_decisions && data.mcra_decisions.length > 0) {
+                decBox.innerHTML = data.mcra_decisions.map(d => `
+                    <div style="margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:4px;">
+                        <strong>[Request ${d.request_id} - ${d.slice_type}]</strong> Path: ${d.route_name.toUpperCase()} | Status: <span style="color:${d.admitted ? '#4CAF50':'#F44336'}">${d.admitted ? 'ADMITTED':'BLOCKED'}</span><br/>
+                        Deadline: ${d.deadline_ms}ms | Final Predicted Delay: ${d.final_predicted_delay_ms}ms | Iterations: ${d.iterations_count}<br/>
+                        ${d.iterations.map(it => `&nbsp;&nbsp;&bull; Iter ${it.iteration}: Picked [${it.selected_resource}] (Marginal Cost &gamma;=${it.marginal_cost}) &rarr; Delay ${it.predicted_delay_before}ms &rarr; ${it.predicted_delay_after}ms`).join('<br/>')}
+                    </div>
+                `).join('');
+            } else {
+                decBox.innerText = "No decision traces recorded.";
+            }
+
+            // Populate Event Log
+            const evBox = document.getElementById('event-log-box');
+            if (data.events && data.events.length > 0) {
+                evBox.innerHTML = data.events.map(ev => `
+                    <div>[t=${ev.time_ms.toFixed(2)}ms] <strong>${ev.event_type}</strong> | Req: ${ev.request_id} ${ev.node_or_link_id ? '| Resource: '+ev.node_or_link_id : ''}</div>
+                `).join('');
+            }
+
+            drawMCRAChart();
+        }
+
+        function renderLegacyResults(data, algo) {
+            if (!data) return;
+            const s = data.summary;
             ['eMBB', 'URLLC', 'mMTC'].forEach(slice => {
-                const idPrefix = slice.toLowerCase();
-                if(s[slice]) {
-                    document.getElementById(`${idPrefix}-thr`).innerText = s[slice].avg_throughput.toFixed(2) + ' Mbps';
-                    document.getElementById(`${idPrefix}-lat`).innerText = s[slice].avg_latency.toFixed(2) + ' ms';
-                    document.getElementById(`${idPrefix}-loss`).innerText = s[slice].avg_packet_loss.toFixed(2) + ' %';
-                    
+                const id = slice.toLowerCase();
+                if (s && s[slice]) {
+                    document.getElementById(`${id}-thr`).innerText = s[slice].avg_throughput.toFixed(2) + ' Mbps';
+                    document.getElementById(`${id}-lat`).innerText = s[slice].avg_latency.toFixed(2) + ' ms';
+                    document.getElementById(`${id}-loss`).innerText = s[slice].avg_packet_loss.toFixed(2) + ' %';
                     const qos = s[slice].qos_satisfaction;
-                    const qosEl = document.getElementById(`${idPrefix}-qos`);
-                    qosEl.innerText = qos.toFixed(1) + '%';
-                    qosEl.style.color = qos > 90 ? '#4CAF50' : qos > 70 ? '#FFC107' : '#F44336';
+                    const el = document.getElementById(`${id}-qos`);
+                    el.innerText = qos.toFixed(1) + '%';
+                    el.style.color = qos >= 90 ? '#4CAF50' : qos >= 70 ? '#FFC107' : '#F44336';
                 }
             });
 
-            // Update Comparison Table
+            // Benchmark Table
             const compContainer = document.getElementById('comparison-container');
             const tbody = document.getElementById('comp-body');
             tbody.innerHTML = '';
-            
-            if (Object.keys(simData.comparison).length > 0) {
+            if (data.comparison && Object.keys(data.comparison).length > 0) {
                 compContainer.style.display = 'block';
-                for (const [algo, slices] of Object.entries(simData.comparison)) {
-                    for (const [slice, metrics] of Object.entries(slices)) {
+                for (const [aName, slices] of Object.entries(data.comparison)) {
+                    for (const [slName, metrics] of Object.entries(slices)) {
                         tbody.innerHTML += `<tr>
-                            <td>${algo}</td>
-                            <td style="color:${colors[slice]}">${slice}</td>
+                            <td>${aName}</td>
+                            <td style="color:${colors[slName]}">${slName}</td>
                             <td>${metrics.avg_throughput.toFixed(2)}</td>
                             <td>${metrics.avg_latency.toFixed(2)}</td>
                             <td>${metrics.avg_packet_loss.toFixed(2)}%</td>
@@ -415,96 +709,173 @@
                 compContainer.style.display = 'none';
             }
 
-            drawChart();
+            drawLegacyChart(data);
         }
 
-        function showChart(type) {
-            currentChartType = type;
+        function switchChartTab(tab) {
+            currentChartTab = tab;
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            drawChart();
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            if (isMCRAMode) {
+                drawMCRAChart();
+            } else {
+                drawLegacyChart(lastSimData);
+            }
         }
 
-        function drawChart() {
-            if (!simData) return;
+        function drawMCRAChart() {
+            if (!lastSimData || !lastSimData.per_slice) return;
             const ctx = document.getElementById('mainChart').getContext('2d');
             if (mainChart) mainChart.destroy();
 
             Chart.defaults.color = '#ccc';
+            const ps = lastSimData.per_slice;
+            const slices = ['eMBB', 'URLLC', 'mMTC'];
 
-            // Filter for single algorithm if 'All' is selected, for time-series charts
-            // If 'All', just show the first algorithm's time series, or if it's QoS, show bar chart comparing algos
-            
             let chartConfig = {};
-            const isAll = document.getElementById('algorithm').value === 'All';
+
+            if (currentChartTab === 'throughput') {
+                chartConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: slices,
+                        datasets: [{
+                            label: 'Requests Completed',
+                            data: slices.map(s => ps[s].completed_requests),
+                            backgroundColor: ['#2196F3', '#F44336', '#4CAF50']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'MCRA Completed Requests by Slice' } }
+                    }
+                };
+            } else if (currentChartTab === 'latency') {
+                chartConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: slices,
+                        datasets: [
+                            {
+                                label: 'Mean E2E Delay (ms)',
+                                data: slices.map(s => ps[s].mean_e2e_delay_ms),
+                                backgroundColor: ['rgba(33, 150, 243, 0.7)', 'rgba(244, 67, 54, 0.7)', 'rgba(76, 175, 80, 0.7)']
+                            },
+                            {
+                                label: '95th Percentile Delay (ms)',
+                                data: slices.map(s => ps[s].p95_delay_ms),
+                                backgroundColor: ['#2196F3', '#F44336', '#4CAF50']
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'MCRA End-to-End Latency Profile (Mean vs P95)' } }
+                    }
+                };
+            } else if (currentChartTab === 'qos') {
+                chartConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: slices,
+                        datasets: [{
+                            label: 'QoS SLA Satisfaction Rate (%)',
+                            data: slices.map(s => ps[s].qos_satisfaction_pct),
+                            backgroundColor: ['#2196F3', '#F44336', '#4CAF50']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'QoS Satisfaction Rate Under MCRA' } },
+                        scales: { y: { beginAtZero: true, max: 100 } }
+                    }
+                };
+            } else if (currentChartTab === 'utilization') {
+                const ru = lastSimData.resource_utilization || {};
+                const resKeys = Object.keys(ru);
+                chartConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: resKeys,
+                        datasets: [{
+                            label: 'Time-Weighted Utilization (%)',
+                            data: resKeys.map(k => ru[k]),
+                            backgroundColor: '#9c27b0'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'Time-Weighted Resource Utilization Across Network' } },
+                        scales: { y: { beginAtZero: true, max: 100 } }
+                    }
+                };
+            }
+
+            mainChart = new Chart(ctx, chartConfig);
+        }
+
+        function drawLegacyChart(simData) {
+            if (!simData || !simData.results) return;
+            const ctx = document.getElementById('mainChart').getContext('2d');
+            if (mainChart) mainChart.destroy();
+
+            Chart.defaults.color = '#ccc';
             const firstAlgo = simData.results[0].algorithm;
             const timeData = simData.results.filter(r => r.algorithm === firstAlgo);
             const labels = [...new Set(timeData.map(r => r.time))];
 
-            if (currentChartType === 'throughput' || currentChartType === 'latency' || currentChartType === 'allocation') {
-                const metricMap = { throughput: 'throughput', latency: 'latency', allocation: 'allocation' };
-                const metric = metricMap[currentChartType];
-                
+            if (currentChartTab === 'throughput' || currentChartTab === 'latency' || currentChartTab === 'allocation') {
+                const metric = currentChartTab;
                 const datasets = ['eMBB', 'URLLC', 'mMTC'].map(slice => {
                     const sliceData = timeData.filter(r => r.slice === slice);
                     return {
-                        label: slice + (isAll ? ` (${firstAlgo})` : ''),
-                        data: sliceData.map(r => r[metric]),
+                        label: `${slice} (${firstAlgo})`,
+                        data: sliceData.map(r => r[metric] || 0),
                         borderColor: colors[slice],
-                        backgroundColor: colors[slice] + '40',
-                        fill: currentChartType === 'allocation',
+                        backgroundColor: colors[slice] + '33',
+                        fill: currentChartTab === 'allocation',
                         tension: 0.3
                     };
                 });
 
-                chartConfig = {
+                mainChart = new Chart(ctx, {
                     type: 'line',
                     data: { labels, datasets },
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
-                        plugins: { title: { display: true, text: `${currentChartType.toUpperCase()} vs TIME` } },
-                        scales: {
-                            x: { title: { display: true, text: 'Time (s)' } },
-                            y: { title: { display: true, text: metric === 'allocation' ? 'Resource Share' : metric } }
-                        }
+                        plugins: { title: { display: true, text: `${metric.toUpperCase()} vs TIME` } }
                     }
-                };
-            } else if (currentChartType === 'qos') {
-                if (isAll) {
-                    const algos = Object.keys(simData.comparison);
-                    const datasets = ['eMBB', 'URLLC', 'mMTC'].map(slice => ({
-                        label: slice,
-                        data: algos.map(a => simData.comparison[a][slice].qos_satisfaction),
-                        backgroundColor: colors[slice]
-                    }));
-                    chartConfig = {
-                        type: 'bar',
-                        data: { labels: algos, datasets },
-                        options: {
-                            responsive: true, maintainAspectRatio: false,
-                            plugins: { title: { display: true, text: 'QoS Satisfaction Comparison' } },
-                            scales: { y: { beginAtZero: true, max: 100 } }
-                        }
-                    };
-                } else {
-                    chartConfig = {
-                        type: 'bar',
-                        data: {
-                            labels: ['eMBB', 'URLLC', 'mMTC'],
-                            datasets: [{
-                                label: 'QoS Satisfaction %',
-                                data: ['eMBB', 'URLLC', 'mMTC'].map(s => simData.summary[s].qos_satisfaction),
-                                backgroundColor: ['#2196F3', '#F44336', '#4CAF50']
-                            }]
-                        },
-                        options: { responsive: true, maintainAspectRatio: false, scales: { y: { max: 100 } } }
-                    };
-                }
-            }
+                });
+            } else if (currentChartTab === 'qos') {
+                const algos = simData.comparison ? Object.keys(simData.comparison) : [firstAlgo];
+                const datasets = ['eMBB', 'URLLC', 'mMTC'].map(slice => ({
+                    label: slice,
+                    data: algos.map(a => simData.comparison ? simData.comparison[a][slice].qos_satisfaction : simData.summary[slice].qos_satisfaction),
+                    backgroundColor: colors[slice]
+                }));
 
-            mainChart = new Chart(ctx, chartConfig);
+                mainChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: { labels: algos, datasets },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { title: { display: true, text: 'QoS Satisfaction Comparison' } },
+                        scales: { y: { beginAtZero: true, max: 100 } }
+                    }
+                });
+            }
         }
+
+        // Initialize default view
+        toggleAlgorithmMode();
     </script>
 </body>
 </html>

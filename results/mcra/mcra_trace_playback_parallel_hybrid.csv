@@ -1,0 +1,102 @@
+request_id,tenant_id,slice_type,arrival_time_ms,payload_bits,compute_demand,deadline_ms,route_candidate,status,status_reason,predicted_delay_ms,actual_e2e_delay_ms,completion_time_ms,deadline_met
+trace_mMTC_0001,tenant_1,mMTC,5.0,640.0,0.8,150.0,edge,COMPLETED,,3.16,3.16,8.16,True
+trace_URLLC_0001,tenant_1,URLLC,8.0,2560.0,3.0,6.0,edge,COMPLETED,,5.94,5.94,13.94,True
+trace_eMBB_0001,tenant_1,eMBB,12.5,113600.0,12.5,75.0,edge,COMPLETED,,74.49,136.02,148.52,False
+trace_mMTC_0002,tenant_2,mMTC,18.5,960.0,1.0,160.0,edge,COMPLETED,,3.84,130.88,149.38,True
+trace_URLLC_0002,tenant_2,URLLC,22.4,3600.0,4.0,5.5,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+trace_eMBB_0002,tenant_2,eMBB,28.0,148000.0,15.0,80.0,edge,COMPLETED,,79.83,322.97,350.97,False
+trace_mMTC_0003,tenant_1,mMTC,35.0,760.0,0.9,150.0,edge,COMPLETED,,3.44,317.18,352.18,False
+trace_URLLC_0003,tenant_1,URLLC,39.1,2240.0,2.5,5.0,edge,COMPLETED,,4.97,316.02,355.12,False
+trace_eMBB_0003,tenant_1,eMBB,45.2,192000.0,18.0,85.0,edge,COMPLETED,,83.4,606.93,652.13,False
+trace_mMTC_0004,tenant_2,mMTC,50.2,880.0,1.1,160.0,edge,COMPLETED,,3.82,602.64,652.84,False
+trace_URLLC_0004,tenant_2,URLLC,55.8,4080.0,4.5,6.0,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+trace_eMBB_0004,tenant_2,eMBB,62.1,249600.0,22.0,80.0,edge,COMPLETED,,79.63,1063.54,1125.64,False
+trace_mMTC_0005,tenant_1,mMTC,68.0,600.0,0.7,140.0,edge,COMPLETED,,3.0,1058.4,1126.4,False
+trace_URLLC_0005,tenant_1,URLLC,74.0,2800.0,3.2,5.5,edge,COMPLETED,,5.47,1056.08,1130.08,False
+trace_mMTC_0006,tenant_2,mMTC,85.3,1040.0,1.2,160.0,edge,COMPLETED,,4.16,1046.72,1132.02,False
+trace_eMBB_0005,tenant_1,eMBB,85.4,336000.0,28.0,90.0,edge,COMPLETED,,89.93,1844.85,1930.25,False
+trace_URLLC_0006,tenant_2,URLLC,92.3,3280.0,3.8,5.0,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+trace_mMTC_0007,tenant_1,mMTC,102.0,680.0,0.8,150.0,edge,COMPLETED,,3.22,1829.14,1931.14,False
+trace_eMBB_0006,tenant_2,eMBB,108.0,134400.0,14.0,75.0,edge,COMPLETED,,73.0,1997.14,2105.14,False
+trace_URLLC_0007,tenant_1,URLLC,115.0,4960.0,5.0,6.5,edge,COMPLETED,,5.85,1993.99,2108.99,False
+trace_mMTC_0008,tenant_2,mMTC,120.4,840.0,1.0,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0007,tenant_1,eMBB,135.6,228000.0,20.0,85.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0008,tenant_2,URLLC,138.2,2480.0,2.8,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0009,tenant_1,mMTC,140.0,720.0,0.9,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0009,tenant_1,URLLC,160.5,3840.0,4.2,5.5,edge,COMPLETED,,5.01,1951.28,2111.78,False
+trace_mMTC_0010,tenant_2,mMTC,160.5,920.0,1.1,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0008,tenant_2,eMBB,162.3,312000.0,25.0,80.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0011,tenant_1,mMTC,182.0,640.0,0.8,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0010,tenant_2,URLLC,184.0,3120.0,3.5,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0009,tenant_1,eMBB,190.1,360000.0,30.0,90.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0012,tenant_2,mMTC,205.1,1000.0,1.2,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0011,tenant_1,URLLC,210.1,4480.0,4.8,6.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0010,tenant_2,eMBB,218.4,168000.0,16.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0013,tenant_1,mMTC,228.0,560.0,0.7,140.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0012,tenant_2,URLLC,235.6,2640.0,3.0,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0014,tenant_2,mMTC,250.3,1120.0,1.3,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0011,tenant_1,eMBB,252.0,288000.0,24.0,85.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0013,tenant_1,URLLC,262.0,3360.0,3.9,5.5,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0015,tenant_1,mMTC,275.0,680.0,0.8,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0012,tenant_2,eMBB,285.7,384000.0,32.0,90.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0014,tenant_2,URLLC,290.4,4000.0,4.5,6.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0016,tenant_2,mMTC,300.2,880.0,1.0,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0013,tenant_1,eMBB,315.2,124000.0,12.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0015,tenant_1,URLLC,320.0,2480.0,2.9,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0017,tenant_1,mMTC,325.0,760.0,0.9,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0014,tenant_2,eMBB,348.9,219200.0,19.0,80.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0018,tenant_2,mMTC,350.8,1040.0,1.2,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0016,tenant_2,URLLC,351.2,3760.0,4.1,5.5,edge,COMPLETED,,5.06,1763.12,2114.32,False
+trace_mMTC_0019,tenant_1,mMTC,378.0,600.0,0.7,140.0,edge,COMPLETED,,3.0,1737.28,2115.28,False
+trace_eMBB_0015,tenant_1,eMBB,380.3,416000.0,35.0,95.0,none,BLOCKED_SEARCH_LIMIT,Search limit reached (50 iterations) without satisfying deadline,0.0,0.0,0.0,False
+trace_URLLC_0017,tenant_1,URLLC,385.0,4880.0,5.0,6.5,edge,COMPLETED,,6.22,1733.68,2118.68,False
+trace_mMTC_0020,tenant_2,mMTC,405.4,960.0,1.1,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0016,tenant_2,eMBB,415.0,153600.0,15.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0018,tenant_2,URLLC,418.5,2720.0,3.1,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0021,tenant_1,mMTC,432.0,680.0,0.8,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0019,tenant_1,URLLC,450.0,3200.0,3.6,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0017,tenant_1,eMBB,452.8,264000.0,22.0,85.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0022,tenant_2,mMTC,460.1,840.0,1.0,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0020,tenant_2,URLLC,485.3,4240.0,4.6,6.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0018,tenant_2,eMBB,489.1,332000.0,28.0,90.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0023,tenant_1,mMTC,490.0,720.0,0.9,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0021,tenant_1,URLLC,520.1,2560.0,3.0,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0024,tenant_2,mMTC,520.5,920.0,1.1,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0019,tenant_1,eMBB,525.4,142400.0,14.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0025,tenant_1,mMTC,552.0,640.0,0.8,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0022,tenant_2,URLLC,555.8,3680.0,4.0,5.5,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0020,tenant_2,eMBB,560.0,232000.0,20.0,80.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0026,tenant_2,mMTC,585.3,1000.0,1.2,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0023,tenant_1,URLLC,592.0,3040.0,3.4,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0021,tenant_1,eMBB,598.6,368000.0,30.0,90.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0027,tenant_1,mMTC,618.0,560.0,0.7,140.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0024,tenant_2,URLLC,630.4,4400.0,4.8,6.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0022,tenant_2,eMBB,635.1,180000.0,17.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0028,tenant_2,mMTC,650.4,1080.0,1.3,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0025,tenant_1,URLLC,668.0,2720.0,3.2,5.0,edge,COMPLETED,,4.28,1452.86,2120.86,False
+trace_eMBB_0023,tenant_1,eMBB,672.4,304000.0,26.0,85.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0029,tenant_1,mMTC,685.0,680.0,0.8,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0026,tenant_2,URLLC,705.5,3920.0,4.3,5.5,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0024,tenant_2,eMBB,710.0,408000.0,34.0,95.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0030,tenant_2,mMTC,720.2,880.0,1.0,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0027,tenant_1,URLLC,745.0,4640.0,5.0,6.5,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0025,tenant_1,eMBB,748.2,144000.0,14.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0031,tenant_1,mMTC,755.0,760.0,0.9,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0028,tenant_2,URLLC,782.1,2880.0,3.3,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0026,tenant_2,eMBB,785.6,260000.0,23.0,85.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0032,tenant_2,mMTC,790.6,1040.0,1.2,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0029,tenant_1,URLLC,820.5,3440.0,3.8,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0027,tenant_1,eMBB,824.0,352000.0,29.0,90.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0033,tenant_1,mMTC,828.0,600.0,0.7,140.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0030,tenant_2,URLLC,860.0,4080.0,4.5,6.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0028,tenant_2,eMBB,862.5,164000.0,16.0,75.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0034,tenant_2,mMTC,865.1,960.0,1.1,160.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0031,tenant_1,URLLC,900.2,2800.0,3.1,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0029,tenant_1,eMBB,901.8,280000.0,24.0,85.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0035,tenant_1,mMTC,905.0,680.0,0.8,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0032,tenant_2,URLLC,940.8,3760.0,4.1,5.5,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0030,tenant_2,eMBB,942.3,392000.0,33.0,95.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0036,tenant_2,mMTC,945.3,840.0,1.0,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_URLLC_0033,tenant_1,URLLC,978.5,3280.0,3.7,5.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_eMBB_0031,tenant_1,eMBB,980.0,208000.0,18.0,80.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False
+trace_mMTC_0037,tenant_1,mMTC,985.0,720.0,0.9,150.0,none,BLOCKED_CAPACITY,Insufficient capacity for initial minimum allocation,0.0,0.0,0.0,False

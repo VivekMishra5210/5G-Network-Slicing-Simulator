@@ -1,0 +1,11 @@
+request_id,tenant_id,slice_type,arrival_time_ms,payload_bits,compute_demand,deadline_ms,route_candidate,status,status_reason,predicted_delay_ms,actual_e2e_delay_ms,completion_time_ms,deadline_met
+ns3_req_0001,tenant_1,URLLC,10.5,4096.0,3.0,8.0,edge,COMPLETED,,7.81,7.81,18.31,True
+ns3_req_0002,tenant_2,URLLC,24.2,8192.0,3.0,8.0,edge,COMPLETED,,7.91,7.91,32.11,True
+ns3_req_0003,tenant_1,URLLC,48.1,2048.0,3.0,8.0,edge,COMPLETED,,7.47,7.47,55.57,True
+ns3_req_0004,tenant_2,URLLC,75.4,11200.0,3.0,8.0,edge,COMPLETED,,7.88,7.88,83.28,True
+ns3_req_0005,tenant_1,URLLC,105.2,5120.0,3.0,8.0,edge,COMPLETED,,7.98,7.98,113.18,True
+ns3_req_0006,tenant_2,URLLC,142.0,6800.0,3.0,8.0,edge,COMPLETED,,7.8,7.8,149.8,True
+ns3_req_0007,tenant_1,URLLC,185.6,9600.0,3.0,8.0,edge,COMPLETED,,8.0,8.0,193.6,True
+ns3_req_0008,tenant_2,URLLC,230.1,2560.0,3.0,8.0,edge,COMPLETED,,7.81,7.81,237.91,True
+ns3_req_0009,tenant_1,URLLC,285.0,12000.0,3.0,8.0,edge,COMPLETED,,8.0,8.0,293.0,True
+ns3_req_0010,tenant_2,URLLC,350.4,3840.0,3.0,8.0,edge,COMPLETED,,7.92,7.92,358.32,True
